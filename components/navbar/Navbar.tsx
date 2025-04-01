@@ -42,7 +42,7 @@ export const Navbar: React.FC = () => {
 		<nav
 			className={cn(
 				'fixed w-full z-50 transition-all duration-300 bg-red-500 ',
-				isScrolled ? 'shadow-md py-2' : ' py-4'
+				isScrolled ? 'shadow-md py-4' : ' py-6'
 			)}
 		>
 			<div className="container-custom">
