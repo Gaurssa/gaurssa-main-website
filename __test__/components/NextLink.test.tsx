@@ -1,7 +1,7 @@
+import { NextLink } from '@/components/next-link/NextLink';
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { NextLink } from './NextLink';
 
 test('changes the class when hovered', async () => {
 	render(
