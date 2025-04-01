@@ -9,7 +9,7 @@ interface NextLinkProps extends Omit<React.ComponentProps<'a'>, 'ref'> {
 }
 
 export const NextLink = ({ page, ref, className, ...props }: NextLinkProps) => {
-	console.log('Hello');
+	console.log('Hello hi');
 	return (
 		<Link
 			className={cn(className)}
