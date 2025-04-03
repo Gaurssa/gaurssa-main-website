@@ -4,7 +4,7 @@ import { AboutUsOverview } from './AboutUsOverview';
 
 export const AboutUs = () => {
 	return (
-		<section className=" h-[90vh] overflow-hidden w-full">
+		<>
 			<div className="max-w-[1760px] mx-auto grid grid-cols-2 items-start h-full">
 				<div className="flex flex-col justify-between col-start-1 col-end-2 h-full  pt-20">
 					<AboutUsOverview />
@@ -28,6 +28,6 @@ export const AboutUs = () => {
 					</div>
 				</div>
 			</div>
-		</section>
+		</>
 	);
 };

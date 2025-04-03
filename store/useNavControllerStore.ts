@@ -9,7 +9,7 @@ interface NavControllerTypes {
 	setActiveMenu: (menu: number | null) => void;
 }
 
-export const useNavbarController = create<NavControllerTypes>((set) => ({
+export const useNavControllerStore = create<NavControllerTypes>((set) => ({
 	isOpen: false,
 	isScrolled: false,
 	activeMenu: null,

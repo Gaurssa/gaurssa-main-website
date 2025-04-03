@@ -4,7 +4,7 @@ import LocationButton from './LocationButton';
 
 export const GeoStatsOverview = () => {
 	return (
-		<section className="bg-black h-screen py-20 flex flex-col gap-10">
+		<>
 			<GeoLocationMetrics />
 			<LocationButton />
 			<div className=" w-full ">
@@ -16,6 +16,6 @@ export const GeoStatsOverview = () => {
 					className="mx-auto"
 				/>
 			</div>
-		</section>
+		</>
 	);
 };

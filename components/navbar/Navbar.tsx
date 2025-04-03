@@ -2,8 +2,9 @@
 
 import { OutIcon } from '@/assets/icons/outIcon';
 import { cn } from '@/lib/utils';
+import { useNavControllerStore } from '@/store/useNavControllerStore';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { Button } from '../ui/button';
 
 interface NavItem {
@@ -35,9 +36,14 @@ const navigation: NavItem[] = [
 ];
 
 export const Navbar: React.FC = () => {
-	const [isOpen, setIsOpen] = useState(false);
-	const [isScrolled, setIsScrolled] = useState(false);
-	const [activeMenu, setActiveMenu] = useState<number | null>(null);
+	const {
+		activeMenu,
+		isOpen,
+		isScrolled,
+		setIsOpen,
+		setIsScrolled,
+		setActiveMenu,
+	} = useNavControllerStore();
 
 	useEffect(() => {
 		const handleScroll = () => {
