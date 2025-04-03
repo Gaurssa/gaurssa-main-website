@@ -1,5 +1,7 @@
+import { HeroSection } from '@/components/hero-section/HeroSection';
+
 const page = () => {
-	return <div className=" h-[200vh] ">page</div>;
+	return <HeroSection />;
 };
 
 export default page;

@@ -1,11 +1,23 @@
 import type { Metadata } from 'next';
-import { Outfit } from 'next/font/google';
+import { DM_Serif_Display, Outfit, Solitreo } from 'next/font/google';
 import './globals.css';
 
 const outfit = Outfit({
 	variable: '--font-outfit',
 	subsets: ['latin'],
 	weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+});
+
+const dmSerfitDisplay = DM_Serif_Display({
+	variable: '--font-dm-serif-display',
+	subsets: ['latin'],
+	weight: ['400'],
+});
+
+const solitreo = Solitreo({
+	variable: '--font-solitreo',
+	subsets: ['latin'],
+	weight: ['400'],
 });
 
 export const metadata: Metadata = {
@@ -20,7 +32,9 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body className={` ${outfit.variable} antialiased relative `}>
+			<body
+				className={` ${outfit.variable} antialiased relative ${dmSerfitDisplay.variable} ${solitreo.variable}`}
+			>
 				{children}
 			</body>
 		</html>
