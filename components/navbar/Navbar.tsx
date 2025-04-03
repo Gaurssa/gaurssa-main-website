@@ -76,14 +76,9 @@ export const Navbar: React.FC = () => {
 			{/* CTA Button */}
 			<div className="hidden md:flex items-center gap-8">
 				<ul className="flex items-center gap-12">
-					{navigation.map((item) => (
-						<li
-							key={item.name}
-							className="group"
-							onMouseEnter={() => setActiveMenu(item.id)}
-							onMouseLeave={() => setActiveMenu(null)}
-						>
-							{!item.node ? (
+					{navigation.map((item) =>
+						!item.node ? (
+							<li key={item.name} className="group">
 								<Link
 									href={item.href}
 									className="text-sm  uppercase group-hover:text-primary-400 text-neutral-50  cursor-pointer"
@@ -100,9 +95,16 @@ export const Navbar: React.FC = () => {
 										</span>
 									</span>
 								</Link>
-							) : (
+							</li>
+						) : (
+							<li
+								className="group"
+								onMouseEnter={() => setActiveMenu(item.id)}
+								onMouseLeave={() => setActiveMenu(null)}
+								key={item.id}
+							>
 								<span
-									className={`relative block overflow-hidden  ${activeMenu !== null ? 'text-gray-400' : 'text-neutral-50'}`}
+									className={`relative block overflow-hidden  text-neu ${activeMenu === item.id ? 'text-primary-600' : 'text-neutral-50'}`}
 								>
 									<span className="inline-block transition-transform duration-300 transform translate-y-0 group-hover:-translate-y-full">
 										{item.name}
@@ -111,15 +113,15 @@ export const Navbar: React.FC = () => {
 										{item.name}
 									</span>
 								</span>
-							)}
 
-							{activeMenu === item.id && item.node && (
-								<div className="absolute z-100 h-40 bg-neutral-50 w-screen inset-0 top-14">
-									hello world {item.name}
-								</div>
-							)}
-						</li>
-					))}
+								{activeMenu === item.id && item.node && (
+									<div className="absolute z-100 h-40 bg-neutral-50 w-screen inset-0 top-14">
+										hello world {item.name}
+									</div>
+								)}
+							</li>
+						)
+					)}
 				</ul>
 
 				<Button className="flex items-center ">

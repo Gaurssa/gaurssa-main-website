@@ -97,7 +97,7 @@
 
 .marquee-content {
 	display: flex;
-	animation: marquee 20s linear infinite; /* Adjust speed with duration */
+	animation: marquee 50s linear infinite; /* Adjust speed with duration */
 }
 
 .marquee:hover .marquee-content {
