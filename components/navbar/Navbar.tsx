@@ -29,7 +29,7 @@ const navigation: NavItem[] = [
 		current: false,
 		node: <div>Hello world</div>,
 	},
-	{ id: 3, name: 'Investor Relation', href: '#industries', current: false },
+	// { id: 3, name: 'Investor Relation', href: '#industries', current: false },
 	{ id: 4, name: 'NewsRoom', href: '#products', current: false },
 	{ id: 5, name: 'Careers', href: '#careers', current: false },
 ];
@@ -71,11 +71,16 @@ export const Navbar: React.FC = () => {
 			<div className="hidden md:flex items-center gap-8">
 				<ul className="flex items-center gap-12">
 					{navigation.map((item) => (
-						<li key={item.name} className="group">
+						<li
+							key={item.name}
+							className="group"
+							onMouseEnter={() => setActiveMenu(item.id)}
+							onMouseLeave={() => setActiveMenu(null)}
+						>
 							{!item.node ? (
 								<Link
 									href={item.href}
-									className="text-sm  uppercase group-hover:text-primary-400  cursor-pointer"
+									className="text-sm  uppercase group-hover:text-primary-400 text-neutral-50  cursor-pointer"
 									aria-current={item.current ? 'page' : undefined}
 								>
 									<span
@@ -92,8 +97,6 @@ export const Navbar: React.FC = () => {
 							) : (
 								<span
 									className={`relative block overflow-hidden  ${activeMenu !== null ? 'text-gray-400' : 'text-neutral-50'}`}
-									onMouseEnter={() => setActiveMenu(item.id)}
-									onMouseLeave={() => setActiveMenu(null)}
 								>
 									<span className="inline-block transition-transform duration-300 transform translate-y-0 group-hover:-translate-y-full">
 										{item.name}
@@ -113,9 +116,9 @@ export const Navbar: React.FC = () => {
 					))}
 				</ul>
 
-				<Button className="flex items-center">
+				<Button className="flex items-center ">
 					<OutIcon className=" stroke-neutral-50 fill-none stroke-2 w-10 h-10" />
-					<span className="">Investor Login</span>
+					<span className="uppercase">Investor Login</span>
 				</Button>
 			</div>
 

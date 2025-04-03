@@ -33,7 +33,7 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body
-				className={` ${outfit.variable} antialiased relative ${dmSerfitDisplay.variable} ${solitreo.variable}`}
+				className={` ${outfit.variable} antialiased relative ${dmSerfitDisplay.variable} ${solitreo.variable} font-outfit `}
 			>
 				{children}
 			</body>

@@ -4,7 +4,7 @@ import React from 'react';
 const appTitleVariants = cva('', {
 	variants: {
 		variant: {
-			default: 'font-dm-serif text-black',
+			default: 'font-serif text-black',
 			secondary: 'font-bold',
 		},
 		size: {

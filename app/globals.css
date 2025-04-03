@@ -85,6 +85,7 @@
 	/* fonts */
 	--font-dm-serif: 'DM Serif Display', 'Serif';
 	--font-solitreo: 'Solitreo', 'sans-serif';
+	--font-outfit: 'Outfit', 'sans-serif';
 }
 
 .marquee {
@@ -109,6 +110,12 @@
 
 .infinite-drop {
 	animation: infiniteDrop 2s linear infinite;
+}
+
+.text-glow {
+	text-shadow:
+		0 0 7px #fff,
+		0 0 8px #fff;
 }
 
 @keyframes infiniteDrop {
