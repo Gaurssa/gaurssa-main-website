@@ -2,9 +2,8 @@
 
 import { OutIcon } from '@/assets/icons/outIcon';
 import { cn } from '@/lib/utils';
-import { useNavControllerStore } from '@/store/useNavControllerStore';
 import Link from 'next/link';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Button } from '../ui/button';
 
 interface NavItem {
@@ -36,14 +35,17 @@ const navigation: NavItem[] = [
 ];
 
 export const Navbar: React.FC = () => {
-	const {
-		activeMenu,
-		isOpen,
-		isScrolled,
-		setIsOpen,
-		setIsScrolled,
-		setActiveMenu,
-	} = useNavControllerStore();
+	// const {
+	// 	activeMenu,
+	// 	isOpen,
+	// 	isScrolled,
+	// 	setIsOpen,
+	// 	setIsScrolled,
+	// 	setActiveMenu,
+	// } = useNavControllerStore();
+	const [isScrolled, setIsScrolled] = useState(false);
+	const [activeMenu, setActiveMenu] = useState<number | null>(null);
+	const [isOpen, setIsOpen] = useState(false);
 
 	useEffect(() => {
 		const handleScroll = () => {
@@ -64,12 +66,15 @@ export const Navbar: React.FC = () => {
 		<nav
 			className={cn(
 				'fixed w-full z-50 transition-all duration-300 bg-transaprent border-b border-neutral-50/20 backdrop-blur-lg  flex items-center justify-between px-20',
-				isScrolled ? 'shadow-md h-14' : 'h-16',
+				isScrolled ? 'shadow-md h-12 bg-[#0d0d0dcb]' : 'h-16',
 				activeMenu !== null ? 'bg-neutral-50' : ''
 			)}
 		>
 			{/* Logo */}
-			<Link href="/" className="flex items-center flex-shrink-0">
+			<Link
+				href="/"
+				className="flex items-center flex-shrink-0 relative z-[200]"
+			>
 				<span className="text-2xl font-bold text-gray-800">GARUSSA</span>
 			</Link>
 
@@ -104,7 +109,14 @@ export const Navbar: React.FC = () => {
 								key={item.id}
 							>
 								<span
-									className={`relative block overflow-hidden  text-neu ${activeMenu === item.id ? 'text-primary-600' : 'text-neutral-50'}`}
+									className={cn(
+										'relative block overflow-hidden text-sm uppercase cursor-pointer',
+										activeMenu !== null
+											? activeMenu === item.id
+												? 'text-primary-600' // Active dropdown menu is blue
+												: 'text-gray-500' // Other items are gray when any dropdown is active
+											: 'text-neutral-50' // Default white text
+									)}
 								>
 									<span className="inline-block transition-transform duration-300 transform translate-y-0 group-hover:-translate-y-full">
 										{item.name}
@@ -115,7 +127,9 @@ export const Navbar: React.FC = () => {
 								</span>
 
 								{activeMenu === item.id && item.node && (
-									<div className="absolute z-100 h-40 bg-neutral-50 w-screen inset-0 top-14">
+									<div
+										className={`absolute z-100 h-64 bg-neutral-50 w-screen inset-0 shadow-md top-10 `}
+									>
 										hello world {item.name}
 									</div>
 								)}
@@ -124,8 +138,8 @@ export const Navbar: React.FC = () => {
 					)}
 				</ul>
 
-				<Button className="flex items-center ">
-					<OutIcon className=" stroke-neutral-50 fill-none stroke-2 w-10 h-10" />
+				<Button className="flex items-center gap-2 py-0.5 relative z-[200]">
+					<OutIcon className=" stroke-neutral-50 fill-none  w-6 h-6 stroke-1" />
 					<span className="uppercase">Investor Login</span>
 				</Button>
 			</div>

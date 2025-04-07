@@ -32,7 +32,7 @@ export const AboutUsOverview = () => {
 			>
 				<span>Learn more about us</span>
 				<span className="border border-primary-600 rounded-full p-0.5 group-hover:border-primary-200 transition-colors duration-300">
-					<ArrowRightIcon className="w-2 h-2 stroke-primary-600 stroke-1 hover:stroke-neutral-50 group-hover:stroke-neutral-50 transition-colors duration-300" />
+					<ArrowRightIcon className="w-0.5 h-0.5 stroke-primary-600 stroke-1 hover:stroke-neutral-50 group-hover:stroke-neutral-50 transition-colors duration-300" />
 				</span>
 			</Button>
 		</div>

@@ -14,6 +14,6 @@ export const useNavControllerStore = create<NavControllerTypes>((set) => ({
 	isScrolled: false,
 	activeMenu: null,
 	setIsOpen: (open) => set({ isOpen: open }),
-	setIsScrolled: (scrolled) => set({ isOpen: scrolled }),
+	setIsScrolled: (scrolled) => set({ isScrolled: scrolled }),
 	setActiveMenu: (menu) => set({ activeMenu: menu }),
 }));

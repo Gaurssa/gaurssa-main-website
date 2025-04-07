@@ -6,7 +6,7 @@ export const AboutUs = () => {
 	return (
 		<>
 			<div className="max-w-[1760px] mx-auto grid grid-cols-2 items-start h-full">
-				<div className="flex flex-col justify-between col-start-1 col-end-2 h-full  pt-20">
+				<div className="flex flex-col justify-between col-start-1 col-end-2 h-full  ">
 					<AboutUsOverview />
 					<AboutUsInfoCard />
 				</div>
