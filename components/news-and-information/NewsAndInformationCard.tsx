@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export const NewsAndInformationCard = () => {
 	return (
-		<div className="max-w-[35rem] min-w-[35rem] w-[35rem] h-[42rem] bg-neutral-50 ">
+		<div className="md:max-w-[35rem] md:min-w-[35rem]  md:w-[35rem] max-w-[22rem] min-w-[22rem] w-[22rem] h-[42rem] bg-neutral-50 ">
 			<h2 className="text-primary-600 font-medium mb-1">Company Newsroom</h2>
 
 			<div className="h-[20rem] overflow-hidden">

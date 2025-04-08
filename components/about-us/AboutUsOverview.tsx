@@ -3,9 +3,11 @@ import { Button } from '../ui/button';
 
 export const AboutUsOverview = () => {
 	return (
-		<div className="flex flex-col gap-2 ">
-			<h2 className="text-[44px] font-dm-serif">Future Forged</h2>
-			<p className="text-gray-800 text-xl font-light">
+		<div className="flex flex-col md:gap-2 gap-1">
+			<h2 className="text-[32px] md:text-[44px] font-dm-serif">
+				Future Forged
+			</h2>
+			<p className="text-gray-800 md:text-xl text-base font-light">
 				We&apos;re building a sustainable and{' '}
 				<span className="text-primary-600 font-semibold">
 					connecting tomorrow

@@ -5,7 +5,7 @@ import { Button } from '../ui/button';
 
 export const FieldOfWorkCard = ({ data }: { data: FieldOfWorkType }) => {
 	return (
-		<li className="relative w-[21rem] min-w-[21rem] min-h-[41rem]  overflow-hidden  border border-gray-100">
+		<li className="relative w-[21rem] min-w-[21rem] h-[32.5rem] md:min-h-[41rem]   overflow-hidden  border border-gray-100">
 			{/* Background Image */}
 
 			<Image
@@ -20,10 +20,10 @@ export const FieldOfWorkCard = ({ data }: { data: FieldOfWorkType }) => {
 				<div>
 					<h2 className="text-xl font-bold text-primary-600">{data.title}</h2>
 					<p className="text-gray-800 font-medium text-wrap">{data.subtitle}</p>
-					<p className="text-gray-800 mt-4 font-light">
+					{/* <p className="text-gray-800 mt-4 font-light">
 						GCG Eyewear combines precision, style, and functionality in every
 						frame. Find the perfect pair to enhance your style.
-					</p>
+					</p> */}
 				</div>
 
 				{/* Button */}

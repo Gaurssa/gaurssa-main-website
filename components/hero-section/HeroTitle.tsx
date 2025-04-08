@@ -1,6 +1,6 @@
 export const HeroTitle = () => {
 	return (
-		<div className="sm:max-w-[860px] w-full lg:px-20 px-10">
+		<div className="sm:max-w-[860px] w-full lg:px-20 px-4">
 			<h1 className="text-neutral-50 font-normal   font-dm-serif sm:text-5xl/[50px] lg:text-[52px]/14 sm:max-w-[80%] text-4xl w-ull">
 				Driving Innovation, Excellence, and Growth Across Industries
 			</h1>

@@ -31,10 +31,10 @@ const BOTTOM_FOOTER_DATA = [
 export const Footer = () => {
 	const [value, setValue] = useState('');
 	return (
-		<footer className="fixed h-fit -z-[10] bottom-0  py-10 px-20 w-full bg-[]">
-			<div className="flex w-full flex-col justify-between gap-10   max-w-[110rem] mx-auto">
+		<footer className=" h-fit md:h-fit -z-[10]  bottom-0  py-10 px-4 md:px-20 w-full bg-[] md:mt-0 ">
+			<div className="flex w-full flex-col justify-between gap-6 md:gap-10   max-w-[110rem] mx-auto ">
 				<div className="flex flex-col gap-4">
-					<div className="w-[24rem]">
+					<div className="w-[16rem] md:w-[24rem]">
 						<Image
 							src="/gaurssa-logo-large.png"
 							alt="Guarssa Logo"
@@ -51,23 +51,25 @@ export const Footer = () => {
 					</div>
 				</div>
 
-				<div className="flex justify-between mb-8">
-					<div>
-						<h3 className="text-primary-600 font-semibold uppercase text-lg mb-4">
-							Business
-						</h3>
-						<FooterList data={FOOTER_BUSINESS_DATA} />
+				<div className="flex justify-between flex-wrap gap-x-24 gap-6 w-full ">
+					<div className="flex justify-between w-full  md:w-1/2">
+						<div>
+							<h3 className="text-primary-600 font-semibold uppercase text-lg mb-4">
+								Business
+							</h3>
+							<FooterList data={FOOTER_BUSINESS_DATA} />
+						</div>
+
+						<div>
+							<h3 className="text-primary-600 font-semibold uppercase text-lg mb-4">
+								Quick Links
+							</h3>
+							<FooterList data={QUICK_LINKS_DATA} />
+						</div>
 					</div>
 
-					<div>
-						<h3 className="text-primary-600 font-semibold uppercase text-lg mb-4">
-							Quick Links
-						</h3>
-						<FooterList data={QUICK_LINKS_DATA} />
-					</div>
-
-					<div className="max-w-[440px]">
-						<h3 className="text-primary-600 font-semibold uppercase text-lg mb-4">
+					<div className="w-full sm:max-w-[440px]">
+						<h3 className="text-primary-600 font-semibold uppercase text-lg mb-2">
 							Subscribe to our newsletter
 						</h3>
 						<p className="text-gray-800 font-light">
@@ -95,16 +97,16 @@ export const Footer = () => {
 					</div>
 				</div>
 
-				<div className="flex justify-between border-t border-gray-100 pt-6 ">
+				<div className="flex justify-between flex-col sm:flex-row gap-4 sm:gap-0 border-t border-gray-100 pt-6 ">
 					<p className="text-gray-600 font-light text-[12px]">
 						&copy; 2025 Gaurssa Group of Companies. All rights reserved.
 					</p>
 
-					<ul className="flex items-center ">
+					<ul className="flex items-center justify-between sm:gap-4">
 						{BOTTOM_FOOTER_DATA.map((data) => (
 							<li key={data.id} className="">
 								<Link
-									className="font-normal text-gray-600 text-[12px] [&:not(:last-child)]:border-r border-red-500 px-4"
+									className="font-normal text-gray-600 text-[12px] [&:not(:last-child)]:border-r border-red-500 "
 									href={data.link}
 								>
 									{data.label}
