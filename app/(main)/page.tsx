@@ -7,7 +7,7 @@ import { FieldOfWork } from '@/components/field-of-work/FieldOfWork';
 import { GcgSubsidairy } from '@/components/gcg-subsidairy/GcgSubsidairy';
 import { GeoStatsOverview } from '@/components/geo-stats-overview/GeoStatsOverview';
 import { HeroSection } from '@/components/hero-section/HeroSection';
-import { NewsAndInformation } from '@/components/new-and-information/NewsAndInformation';
+import { NewsAndInformation } from '@/components/news-and-information/NewsAndInformation';
 import { CSR_DATA } from '@/constants/csr';
 
 const Page = () => {
@@ -49,7 +49,7 @@ const Page = () => {
 			</section>
 			<section
 				// ref={(el) => setSectionRef(el, 5)}
-				className="h-screen py-20 bg-neutral-50 px-20"
+				className="min-h-screen py-20 bg-neutral-50  "
 			>
 				<NewsAndInformation />
 			</section>
@@ -80,6 +80,8 @@ const Page = () => {
 					))}
 				</ul>
 			</section>
+
+			{/* <NavbarMegaMenu data={BUSINESS_MEGAMENU} /> */}
 		</div>
 	);
 };

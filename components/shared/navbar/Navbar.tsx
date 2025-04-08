@@ -1,10 +1,12 @@
 'use client';
 
 import { OutIcon } from '@/assets/icons/outIcon';
+import { BUSINESS_MEGAMENU, COMMUNITY_MEGAMENU } from '@/constants/navbar';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import { Button } from '../ui/button';
+import { Button } from '../../ui/button';
+import { NavbarMegaMenu } from './NavbarMegaMenu';
 
 interface NavItem {
 	id: number;
@@ -20,14 +22,14 @@ const navigation: NavItem[] = [
 		name: 'Business',
 		href: '#',
 		current: true,
-		node: <div>Hello world</div>,
+		node: <NavbarMegaMenu data={BUSINESS_MEGAMENU} />,
 	},
 	{
 		id: 2,
 		name: 'Community',
 		href: '#',
 		current: false,
-		node: <div>Hello world</div>,
+		node: <NavbarMegaMenu data={COMMUNITY_MEGAMENU} />,
 	},
 	// { id: 3, name: 'Investor Relation', href: '#industries', current: false },
 	{ id: 4, name: 'NewsRoom', href: '#products', current: false },
@@ -45,7 +47,7 @@ export const Navbar: React.FC = () => {
 	// } = useNavControllerStore();
 	const [isScrolled, setIsScrolled] = useState(false);
 	const [activeMenu, setActiveMenu] = useState<number | null>(null);
-	const [isOpen, setIsOpen] = useState(false);
+	// const [isOpen, setIsOpen] = useState(false);
 
 	useEffect(() => {
 		const handleScroll = () => {
@@ -56,6 +58,8 @@ export const Navbar: React.FC = () => {
 			}
 		};
 
+		handleScroll();
+
 		window.addEventListener('scroll', handleScroll);
 		return () => {
 			window.removeEventListener('scroll', handleScroll);
@@ -63,11 +67,11 @@ export const Navbar: React.FC = () => {
 	}, []);
 
 	return (
-		<nav
+		<header
 			className={cn(
-				'fixed w-full z-50 transition-all duration-300 bg-transaprent border-b border-neutral-50/20 backdrop-blur-lg  flex items-center justify-between px-20',
+				'fixed w-full z-50 transition-colors  bg-transaprent border-b duration-[700ms] border-neutral-50/20 backdrop-blur-lg  flex items-center justify-between px-20',
 				isScrolled ? 'shadow-md h-12 bg-[#0d0d0dcb]' : 'h-16',
-				activeMenu !== null ? 'bg-neutral-50' : ''
+				activeMenu === null ? '' : 'bg-neutral-50 '
 			)}
 		>
 			{/* Logo */}
@@ -79,14 +83,14 @@ export const Navbar: React.FC = () => {
 			</Link>
 
 			{/* CTA Button */}
-			<div className="hidden md:flex items-center gap-8">
-				<ul className="flex items-center gap-12">
+			<nav className="hidden md:flex items-center gap-8  h-full">
+				<ul className="flex items-center  h-full gap-4">
 					{navigation.map((item) =>
 						!item.node ? (
-							<li key={item.name} className="group">
+							<li key={item.name} className="group px block">
 								<Link
 									href={item.href}
-									className="text-sm  uppercase group-hover:text-primary-400 text-neutral-50  cursor-pointer"
+									className="text-sm  uppercase group-hover:text-primary-400 text-neutral-50  cursor-pointer px-6 block"
 									aria-current={item.current ? 'page' : undefined}
 								>
 									<span
@@ -103,14 +107,14 @@ export const Navbar: React.FC = () => {
 							</li>
 						) : (
 							<li
-								className="group"
+								className="group  h-full flex items-center px-6 cursor-pointer"
 								onMouseEnter={() => setActiveMenu(item.id)}
 								onMouseLeave={() => setActiveMenu(null)}
 								key={item.id}
 							>
 								<span
 									className={cn(
-										'relative block overflow-hidden text-sm uppercase cursor-pointer',
+										'relative  overflow-hidden text-sm uppercase cursor-pointer block ',
 										activeMenu !== null
 											? activeMenu === item.id
 												? 'text-primary-600' // Active dropdown menu is blue
@@ -126,13 +130,21 @@ export const Navbar: React.FC = () => {
 									</span>
 								</span>
 
-								{activeMenu === item.id && item.node && (
+								<div
+									className={`absolute   bg-neutral-50 w-screen inset-0 shadow-md  transition-all overflow-hidden  ${isScrolled ? 'top-12' : 'top-16'}   ${activeMenu === item.id && item.node ? ' duration-500 visible h-96 z-100' : 'h-0 z-[80]  invisible duration-700 pointer-events-none'}`}
+								>
 									<div
-										className={`absolute z-100 h-64 bg-neutral-50 w-screen inset-0 shadow-md top-10 `}
+										className="w-full h-full "
+										style={{
+											opacity: activeMenu === item.id ? 1 : 0,
+											transition: 'opacity 300ms',
+											// This is key: content fades in AFTER background expands
+											transitionDelay: activeMenu === item.id ? '200ms' : '0ms',
+										}}
 									>
-										hello world {item.name}
+										{item.node}
 									</div>
-								)}
+								</div>
 							</li>
 						)
 					)}
@@ -142,13 +154,13 @@ export const Navbar: React.FC = () => {
 					<OutIcon className=" stroke-neutral-50 fill-none  w-6 h-6 stroke-1" />
 					<span className="uppercase">Investor Login</span>
 				</Button>
-			</div>
+			</nav>
 
 			{/* Mobile menu button */}
-			<div className="md:hidden flex items-center"></div>
+			{/* <div className="md:hidden flex items-center"></div> */}
 
 			{/* Mobile menu */}
-			{isOpen && (
+			{/* {isOpen && (
 				<div className="md:hidden bg-white shadow-lg">
 					<div className="px-2  space-y-1 sm:px-3">
 						{navigation.map((item) => (
@@ -164,7 +176,7 @@ export const Navbar: React.FC = () => {
 						))}
 					</div>
 				</div>
-			)}
-		</nav>
+			)} */}
+		</header>
 	);
 };
