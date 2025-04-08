@@ -58,14 +58,14 @@ export const COMMUNITY_MEGAMENU: MegaMenuType[] = [
 		image: '/mega-menu/eyeware.jpeg',
 	},
 	{
-		id: 4,
-		label: 'Child Welfare',
+		id: 5,
+		label: 'Community Development',
 		link: '#',
 		image: '/mega-menu/eyeware.jpeg',
 	},
 	{
-		id: 5,
-		label: 'Community Development',
+		id: 4,
+		label: 'Child Welfare',
 		link: '#',
 		image: '/mega-menu/eyeware.jpeg',
 	},
