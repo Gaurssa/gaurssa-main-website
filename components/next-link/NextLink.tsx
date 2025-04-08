@@ -1,6 +1,6 @@
 'use client';
 
-import { cn } from '@/utils/utils';
+import { cn } from '@/lib/utils';
 import Link from 'next/link';
 
 interface NextLinkProps extends Omit<React.ComponentProps<'a'>, 'ref'> {
