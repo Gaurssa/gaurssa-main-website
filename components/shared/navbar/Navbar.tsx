@@ -1,5 +1,6 @@
 'use client';
 
+import { MenuIcon } from '@/assets/icons/MenuIcon';
 import { OutIcon } from '@/assets/icons/outIcon';
 import { BUSINESS_MEGAMENU, COMMUNITY_MEGAMENU } from '@/constants/navbar';
 import { cn } from '@/lib/utils';
@@ -47,7 +48,7 @@ export const Navbar: React.FC = () => {
 	// } = useNavControllerStore();
 	const [isScrolled, setIsScrolled] = useState(false);
 	const [activeMenu, setActiveMenu] = useState<number | null>(null);
-	// const [isOpen, setIsOpen] = useState(false);
+	const [isOpen, setIsOpen] = useState(false);
 
 	useEffect(() => {
 		const handleScroll = () => {
@@ -69,7 +70,7 @@ export const Navbar: React.FC = () => {
 	return (
 		<header
 			className={cn(
-				'fixed w-full z-50 transition-colors  bg-transaprent border-b duration-[700ms] border-neutral-50/20 backdrop-blur-lg  flex items-center justify-between px-20',
+				'fixed w-full z-50 transition-colors  bg-transaprent border-b duration-[700ms] border-neutral-50/20 backdrop-blur-lg  flex items-center justify-between px-4 lg:px-20',
 				isScrolled ? 'shadow-md h-12 bg-[#0d0d0dcb]' : 'h-16',
 				activeMenu === null ? '' : 'bg-neutral-50 '
 			)}
@@ -90,7 +91,7 @@ export const Navbar: React.FC = () => {
 							<li key={item.name} className="group px block">
 								<Link
 									href={item.href}
-									className="text-sm  uppercase group-hover:text-primary-400 text-neutral-50  cursor-pointer px-6 block"
+									className="text-sm  uppercase group-hover:text-primary-400 text-neutral-50  cursor-pointer px-2 lg:px-6 block"
 									aria-current={item.current ? 'page' : undefined}
 								>
 									<span
@@ -107,7 +108,7 @@ export const Navbar: React.FC = () => {
 							</li>
 						) : (
 							<li
-								className="group  h-full flex items-center px-6 cursor-pointer"
+								className="group  h-full flex items-center px-2 lg:px-6 cursor-pointer"
 								onMouseEnter={() => setActiveMenu(item.id)}
 								onMouseLeave={() => setActiveMenu(null)}
 								key={item.id}
@@ -157,10 +158,20 @@ export const Navbar: React.FC = () => {
 			</nav>
 
 			{/* Mobile menu button */}
-			{/* <div className="md:hidden flex items-center"></div> */}
+			<Button
+				variant={'transparent'}
+				size={'fit'}
+				className="md:hidden flex items-center"
+			>
+				<MenuIcon
+					width={20}
+					height={20}
+					className=" stroke-gray-600  fill-none  transition-all duration-300 "
+				/>
+			</Button>
 
 			{/* Mobile menu */}
-			{/* {isOpen && (
+			{isOpen && (
 				<div className="md:hidden bg-white shadow-lg">
 					<div className="px-2  space-y-1 sm:px-3">
 						{navigation.map((item) => (
@@ -176,7 +187,7 @@ export const Navbar: React.FC = () => {
 						))}
 					</div>
 				</div>
-			)} */}
+			)}
 		</header>
 	);
 };

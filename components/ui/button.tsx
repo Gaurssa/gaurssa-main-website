@@ -21,16 +21,20 @@ const buttonVariants = cva(
 				// Bordered primary button
 				'bordered-primary':
 					'border border-gray-400 bg-transparent hover:bg-primary-400 hover:text-neutral-50 hover:border-primary-400 text-gray-400 font-normal',
+				tertiary: 'bg-neutral-50 ',
 				ghost:
 					'hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50',
 				link: 'text-primary underline-offset-4 hover:underline',
+				transparent: 'bg-transparent',
 			},
 			size: {
-				default: 'h-9 px-8 py-2 has-[>svg]:px-3',
-				sm: '  gap-1.5 px-6  py-2',
-				lg: 'h-10  px-6 has-[>svg]:px-4',
+				default: 'h-10 px-8 py-2 has-[>svg]:px-3',
+				sm: '  gap-1.5 px-3 py-2  h-10 ',
+				lg: 'h-[44px] py-3 px-4 has-[>svg]:px-4',
+				xl: 'h-[56px] py-4 px-5',
 				xsm: 'px-2 py-1',
 				icon: 'size-9',
+				fit: 'w-fit h-fit',
 			},
 		},
 		defaultVariants: {

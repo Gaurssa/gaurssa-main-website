@@ -18,7 +18,6 @@ export const NavbarList = ({
 				className={`hover:text-primary-600 font-bold text-[28px] uppercase duration-300 transition-colors text-gray-800 text-nowrap ${data.id === activeId ? 'text-primary-600' : ''}`}
 				onClick={() => setActiveId((id) => (data.id !== id ? data.id : null))}
 				onMouseEnter={() => setActiveId(data.id)}
-				onMouseLeave={() => setActiveId(null)}
 			>
 				{data.label}
 			</Link>

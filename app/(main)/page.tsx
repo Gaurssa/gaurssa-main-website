@@ -19,13 +19,13 @@ const Page = () => {
 		<div>
 			<section
 				// ref={(el) => setSectionRef(el, 0)}
-				className="h-screen relative "
+				className="h-[100svh] relative "
 			>
 				<HeroSection />
 			</section>
 			<section
 				// ref={(el) => setSectionRef(el, 1)}
-				className="md:h-screen min-h-screen overflow-hidden w-full pt-10 md:pt-20 bg-neutral-50 px-4 md:px-20"
+				className="md:h-screen h-fit overflow-hidden w-full py-10 md:pt-20 bg-neutral-50 px-4 lg:px-20 "
 			>
 				<AboutUs />
 			</section>
@@ -55,7 +55,7 @@ const Page = () => {
 			</section>
 			<section
 				// ref={(el) => setSectionRef(el, 6)}
-				className="h-[60%] py-20 md:px-20 px-4 bg-neutral-50"
+				className="h-[60%] pb-20 pt-0  md:px-20 px-4 bg-neutral-50"
 			>
 				<CareerSection />
 			</section>
@@ -71,7 +71,7 @@ const Page = () => {
 
 			<section
 				// ref={(el) => setSectionRef(el, 8)}
-				className="h-fit md:h-screen py-10 md:py-20  bg-neutral-50 px-4 md:px-20  	"
+				className="h-fit md:h-screen flex items-center flex-col justify-center  py-10 md:py-20   bg-neutral-50 px-4 md:px-20  	"
 			>
 				<CSRSection />
 				<ul className="flex flex-wrap md:flex-nowrap max-w-[54.3rem] mx-auto gap-4 mt-10">

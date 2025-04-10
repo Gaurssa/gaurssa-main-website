@@ -17,21 +17,21 @@ export const FAQSection = () => {
 
 	return (
 		<div className="max-w-[870px] h-full m-auto flex justify-center items-center  flex-col">
-			<h2 className="text-[32px]/10 mb-4  md:text-[44px] font-dm-serif  text-neutral-50 z-20">
+			<h2 className="text-[32px]/9 mb-4  md:text-[44px] font-dm-serif  text-neutral-50 z-20">
 				Clearing Up the Confusion
 			</h2>
 
 			<div className="flex flex-col items-center mt-4 w-full relative z-20">
-				<ul className="flex items-center flex-wrap justify-center gap-4 md:gap-6">
+				<ul className="flex items-center flex-wrap justify-center gap-y-4 gap-x-2 md:gap-6">
 					{FAQS.map((faq) => (
 						<li key={faq.heading}>
 							<Button
 								variant={'bordered-primary'}
-								size={'sm'}
+								size={'lg'}
 								onClick={() => setActiveFAQ(faq.heading)}
 								className={`${
 									activeFAQ === faq.heading
-										? 'bg-primary-400 text-neutral-50 border-transparent'
+										? 'bg-primary-400 text-neutral-50 border-transparent px-5'
 										: ''
 								}`}
 							>
