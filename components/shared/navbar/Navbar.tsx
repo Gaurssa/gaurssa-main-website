@@ -15,6 +15,7 @@ import { BUSINESS_MEGAMENU, COMMUNITY_MEGAMENU } from '@/constants/navbar';
 import { cn } from '@/lib/utils';
 import { useNavControllerStore } from '@/store/useNavControllerStore';
 import Link from 'next/link';
+import { useEffect } from 'react';
 import { NavbarMegaMenu } from './NavbarMegaMenu';
 
 interface NavItem {
@@ -50,35 +51,55 @@ interface NavbarRootprops extends React.ComponentProps<'header'> {
 }
 
 const NavbarRoot = ({ children, className }: NavbarRootprops) => {
-	const { activeMenu, isScrolled } = useNavControllerStore();
-	return (
-		<header
-			className={cn(
-				'fixed w-full z-50 transition-colors  bg-transaprent border-b duration-[700ms] border-neutral-50/20 backdrop-blur-lg  flex items-center justify-between px-4 lg:px-20',
-				isScrolled ? 'shadow-md h-12 bg-[#0d0d0dcb]' : 'h-16',
-				activeMenu === null ? '' : 'bg-neutral-50 ',
-				className
-			)}
-		>
-			{children}
-		</header>
+	const { activeMenu, isScrolled, setIsScrolled } = useNavControllerStore();
+
+	useEffect(() => {
+		const handleScroll = () => {
+			if (window.scrollY > 5) {
+				setIsScrolled(true);
+			} else {
+				setIsScrolled(false);
+			}
+		};
+
+		handleScroll();
+
+		window.addEventListener('scroll', handleScroll);
+		return () => {
+			window.removeEventListener('scroll', handleScroll);
+		};
+	}, []);
+
+	const headerClasses = cn(
+		'fixed w-full z-50 transition-all border-b duration-700 border-neutral-50/20',
+		'backdrop-blur-lg flex items-center justify-between px-4 lg:px-20',
+		isScrolled ? 'shadow-md h-12 bg-[#0d0d0dcb]' : 'h-16',
+		activeMenu !== null ? 'bg-neutral-50' : '',
+		className
 	);
+
+	return <header className={headerClasses}>{children}</header>;
 };
 
-const NavLink = ({ className }: React.ComponentProps<typeof Link>) => {
+const NavLink = ({
+	className,
+	href,
+	...props
+}: React.ComponentProps<typeof Link>) => {
 	return (
 		<Link
-			href="/"
+			href={href}
 			className={cn(
 				`flex items-center flex-shrink-0 relative z-[200]`,
 				className
 			)}
+			{...props}
 		/>
 	);
 };
 
 const List = ({ className }: React.ComponentProps<'li'>) => {
-	return <li className={cn(`group px block`, className)} />;
+	return <li className={cn(className)} />;
 };
 
 const OpenButton = () => {
@@ -117,80 +138,105 @@ const CloseButton = () => {
 	);
 };
 
+const TextWithHoverEffect = ({
+	text,
+	textColor,
+}: {
+	text: string;
+	textColor: string;
+}) => (
+	<span className={`relative block overflow-hidden ${textColor}`}>
+		<span className="inline-block transition-transform duration-300 transform translate-y-0 group-hover:-translate-y-full">
+			{text}
+		</span>
+		<span className="absolute top-0 left-0 inline-block transform translate-y-full transition-transform duration-300 group-hover:translate-y-0">
+			{text}
+		</span>
+	</span>
+);
+
 const DesktopMenu = () => {
 	const { setActiveMenu, activeMenu, isScrolled } = useNavControllerStore();
+
 	return (
-		<nav className="hidden md:flex items-center gap-4  h-full">
-			<ul className="flex items-center  h-full gap-2 ">
-				{navigation.map((item) =>
-					!item.node ? (
-						<li key={item.name} className="group px block">
-							<Link
-								href={item.href}
-								className={`text-sm  uppercase group-hover:text-primary-400 text-neutral-50  cursor-pointer px-2 lg:px-6 block`}
-								aria-current={item.current ? 'page' : undefined}
-							>
-								<span
-									className={`relative block overflow-hidden ${activeMenu !== null ? 'text-gray-400' : ''}`}
+		<nav className="hidden md:flex items-center gap-4 h-full">
+			<ul className="flex items-center h-full gap-2">
+				{navigation.map((item) => {
+					// Regular link without dropdown
+					if (!item.node) {
+						return (
+							<li key={item.name} className="group px block">
+								<Link
+									href={item.href}
+									className="text-sm uppercase group-hover:text-primary-400 text-neutral-50 cursor-pointer px-2 lg:px-6 block"
+									aria-current={item.current ? 'page' : undefined}
 								>
-									<span className="inline-block transition-transform duration-300 transform translate-y-0 group-hover:-translate-y-full">
-										{item.name}
-									</span>
-									<span className="absolute top-0 left-0  inline-block transform translate-y-full transition-transform duration-300 group-hover:translate-y-0">
-										{item.name}
-									</span>
-								</span>
-							</Link>
-						</li>
-					) : (
+									<TextWithHoverEffect
+										text={item.name}
+										textColor={activeMenu !== null ? 'text-gray-400' : ''}
+									/>
+								</Link>
+							</li>
+						);
+					}
+
+					// Dropdown menu item
+					const getLinkTextColor = () => {
+						if (activeMenu === null)
+							return 'text-neutral-50 [&>svg]:text-neutral-50';
+						return activeMenu === item.id
+							? 'text-primary-600 [&>svg]:stroke-primary-600 [&>svg]:-rotate-180'
+							: 'text-gray-500 [&>svg]:stroke-gray-500';
+					};
+
+					const getDropdownStyles = () => {
+						const baseClasses =
+							'absolute bg-neutral-50 w-screen inset-0 shadow-md transition-all overflow-hidden';
+						const topPositionClass = isScrolled ? 'top-12' : 'top-16';
+						const visibilityClasses =
+							activeMenu === item.id && item.node
+								? 'duration-500 visible h-96 z-100'
+								: 'h-0 z-[80] invisible duration-700 pointer-events-none';
+
+						return cn(baseClasses, topPositionClass, visibilityClasses);
+					};
+
+					const contentStyles = {
+						opacity: activeMenu === item.id ? 1 : 0,
+						transition: 'opacity 300ms',
+						transitionDelay: activeMenu === item.id ? '200ms' : '0ms',
+					};
+
+					return (
 						<li
-							className="group  h-full flex items-center px-2 lg:px-6 cursor-pointer"
+							className="group h-full flex items-center px-2 lg:px-6 cursor-pointer"
 							onMouseEnter={() => setActiveMenu(item.id)}
 							onMouseLeave={() => setActiveMenu(null)}
 							key={item.id}
 						>
 							<div
 								className={cn(
-									'relative  overflow-hidden text-sm uppercase cursor-pointer flex  [&>svg]:transition-transform [&>svg]:duration-300',
-									activeMenu !== null
-										? activeMenu === item.id
-											? 'text-primary-600 [&>svg]:stroke-primary-600 [&>svg]:-rotate-180' // Active dropdown menu is blue
-											: 'text-gray-500 [&>svg]:stroke-gray-500' // Other items are gray when any dropdown is active
-										: 'text-neutral-50 [&>svg]:text-neutral-50' // Default white text
+									'relative overflow-hidden text-sm uppercase cursor-pointer flex',
+									'[&>svg]:transition-transform [&>svg]:duration-300',
+									getLinkTextColor()
 								)}
 							>
-								<span className="inline-block transition-transform duration-300 transform translate-y-0 group-hover:-translate-y-full">
-									{item.name}
-								</span>
-								<span className="absolute top-0 left-0  inline-block transform translate-y-full transition-transform duration-300 group-hover:translate-y-0">
-									{item.name}
-								</span>
-
-								<ArrowDownPointIcon className="w-5  h-5  ml-1	 stroke-1 stroke-neutral-50 group-hover:stroke-primary-600 transition-colors duration-300 fill-none" />
+								<TextWithHoverEffect text={item.name} textColor="" />
+								<ArrowDownPointIcon className="w-5 h-5 ml-1 stroke-1 stroke-neutral-50 group-hover:stroke-primary-600 transition-colors duration-300 fill-none" />
 							</div>
 
-							<div
-								className={`absolute   bg-neutral-50 w-screen inset-0 shadow-md  transition-all overflow-hidden  ${isScrolled ? 'top-12' : 'top-16'}   ${activeMenu === item.id && item.node ? ' duration-500 visible h-96 z-100' : 'h-0 z-[80]  invisible duration-700 pointer-events-none'}`}
-							>
-								<div
-									className="w-full h-full "
-									style={{
-										opacity: activeMenu === item.id ? 1 : 0,
-										transition: 'opacity 300ms',
-										// This is key: content fades in AFTER background expands
-										transitionDelay: activeMenu === item.id ? '200ms' : '0ms',
-									}}
-								>
+							<div className={getDropdownStyles()}>
+								<div className="w-full h-full" style={contentStyles}>
 									{item.node}
 								</div>
 							</div>
 						</li>
-					)
-				)}
+					);
+				})}
 			</ul>
 
 			<Button className="flex items-center gap-2 py-0.5 relative z-[200]">
-				<OutIcon className=" stroke-neutral-50 fill-none  w-6 h-6 stroke-1" />
+				<OutIcon className="stroke-neutral-50 fill-none w-6 h-6 stroke-1" />
 				<span className="uppercase">Investor Login</span>
 			</Button>
 		</nav>

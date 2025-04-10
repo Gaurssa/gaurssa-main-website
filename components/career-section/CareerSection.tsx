@@ -31,6 +31,7 @@ export const CareerSection = () => {
 					width={1000}
 					height={1000}
 					className="invert"
+					unoptimized
 				/>
 			</div>
 		</div>

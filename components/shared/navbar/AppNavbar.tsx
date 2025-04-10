@@ -18,12 +18,6 @@ export const AppNavbar = () => {
 					<Navbar.MobileMenu />
 				</>
 			)}
-
-			{/* {screenSize ? (
-        <>
-    
-				</>
-			) : null} */}
 		</Navbar.Root>
 	);
 };
