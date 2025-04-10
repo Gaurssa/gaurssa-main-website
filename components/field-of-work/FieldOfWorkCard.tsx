@@ -27,7 +27,11 @@ export const FieldOfWorkCard = ({ data }: { data: FieldOfWorkType }) => {
 				</div>
 
 				{/* Button */}
-				<Button variant={'primary'} size={'lg'} className="gap-2 mt-4 pr-1.5 ">
+				<Button
+					variant={'primary'}
+					size={'lg'}
+					className="gap-2 mt-4 pr-1.5 pl-6 "
+				>
 					<span>Learn more</span>
 					<span className="border border-primary-600 rounded-full w-6 h-6  group-hover:border-primary-200 transition-colors duration-300 flex items-center justify-center">
 						<ArrowRightIcon className="w-4	 h-4	 stroke-primary-600 stroke-1 hover:stroke-neutral-50 group-hover:stroke-neutral-50 transition-colors duration-300" />

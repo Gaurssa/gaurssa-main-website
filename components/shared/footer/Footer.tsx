@@ -29,7 +29,7 @@ const BOTTOM_FOOTER_DATA = [
 
 export const Footer = () => {
 	return (
-		<footer className=" h-fit md:h-fit -z-[10]  bottom-0  py-10 px-4 md:px-20 w-full bg-[] md:mt-0 ">
+		<footer className=" h-fit md:h-fit -z-[10]  bottom-0  py-10 px-4 lg:px-20 w-full bg-[] md:mt-0 ">
 			<div className="flex w-full flex-col justify-between gap-6 md:gap-10   max-w-[110rem] mx-auto ">
 				<div className="flex flex-col gap-4">
 					<div className="w-[16rem] md:w-[24rem]">

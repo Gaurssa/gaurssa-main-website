@@ -1,4 +1,4 @@
-import { ArrowRightIcon } from '@/assets/icons/ArrowRightIcon';
+import { ArrowDownPointIcon } from '@/assets/icons/ArrowDownPointIcon';
 import { Button } from '../ui/button';
 
 export const AboutUsOverview = () => {
@@ -34,7 +34,7 @@ export const AboutUsOverview = () => {
 			>
 				<span>Learn more about us</span>
 				<span className="border border-primary-600 rounded-full p-[1px] group-hover:border-primary-200 transition-colors duration-300">
-					<ArrowRightIcon className="w-5  h-5 -rotate-90  stroke-primary-600 stroke-1 hover:stroke-neutral-50 group-hover:stroke-neutral-50 transition-colors duration-300 fill-none" />
+					<ArrowDownPointIcon className="w-5  h-5 -rotate-90  stroke-primary-600 stroke-1 hover:stroke-neutral-50 group-hover:stroke-neutral-50 transition-colors duration-300 fill-none" />
 				</span>
 				{/* <span className="border border-primary-600 rounded-full p-0.5 group-hover:border-primary-200 transition-colors duration-300">
 					<ArrowRightIcon className="w-0.5 h-0.5 stroke-primary-600 stroke-1 hover:stroke-neutral-50 group-hover:stroke-neutral-50 transition-colors duration-300" />
