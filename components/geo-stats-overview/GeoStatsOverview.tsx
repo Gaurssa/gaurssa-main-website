@@ -7,7 +7,7 @@ export const GeoStatsOverview = () => {
 		<>
 			<GeoLocationMetrics />
 			<LocationButton />
-			<div className=" w-full ">
+			<div className=" w-full md:px-0 px-4 ">
 				<Image
 					src="/home/worldMap.png"
 					alt="World Map"

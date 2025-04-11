@@ -16,22 +16,22 @@ export const FAQSection = () => {
 	const filteredFAQ = FAQS.filter((faq) => faq.heading === activeFAQ);
 
 	return (
-		<div className="max-w-[870px] mx-auto flex justify-center items-center  flex-col">
-			<h2 className="text-[44px] font-dm-serif text-neutral-50 text-center">
+		<div className="max-w-[870px] h-full m-auto flex justify-center items-center  flex-col">
+			<h2 className="text-[32px]/9 mb-4  md:text-[44px] font-dm-serif  text-neutral-50 z-20">
 				Clearing Up the Confusion
 			</h2>
 
-			<div className="flex flex-col items-center mt-4 w-full">
-				<ul className="flex items-center gap-6">
+			<div className="flex flex-col items-center mt-4 w-full relative z-20">
+				<ul className="flex items-center flex-wrap justify-center gap-y-4 gap-x-2 md:gap-6">
 					{FAQS.map((faq) => (
 						<li key={faq.heading}>
 							<Button
 								variant={'bordered-primary'}
-								size={'sm'}
+								size={'lg'}
 								onClick={() => setActiveFAQ(faq.heading)}
 								className={`${
 									activeFAQ === faq.heading
-										? 'bg-primary-400 text-neutral-50 border-transparent'
+										? 'bg-primary-400 text-neutral-50 border-transparent px-5'
 										: ''
 								}`}
 							>
@@ -46,7 +46,7 @@ export const FAQSection = () => {
 							<AccordionItem
 								value={item.title}
 								key={item.id}
-								className="border-b border-neutral-900 w-full py-4"
+								className="border-b border-neutral-900 w-full md:py-4 py-1"
 							>
 								<AccordionTrigger className="text-neutral-50 no-underline data-[state=open]:no-underline hover:no-underline cursor-pointer font-medium text-lg w-full flex justify-between">
 									<span className="flex gap-4">

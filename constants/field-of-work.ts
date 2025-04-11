@@ -23,7 +23,7 @@ export const FIELD_OF_WORK: FieldOfWorkType[] = [
 		subtitle: 'Quality Care for a Healthier Future',
 		description:
 			'GCG Healthcare delivers innovative solutions to enhance well-being, prioritizing quality and care in every service.',
-		image: '/home/chasmis-girl.avif',
+		image: '/home/tata-ausadhi.jpeg',
 		link: '#',
 	},
 
@@ -33,7 +33,7 @@ export const FIELD_OF_WORK: FieldOfWorkType[] = [
 		subtitle: 'Weaving Quality Crafting Comfort',
 		description:
 			'GCG Textile believes in trendy and comfortable clothing for every occasion and style, meeting customer preferences.',
-		image: '/home/chasmis-girl.avif',
+		image: '/home/siyo-dhago.jpeg',
 		link: '#',
 	},
 	{
@@ -42,7 +42,7 @@ export const FIELD_OF_WORK: FieldOfWorkType[] = [
 		subtitle: 'Driving Dreams, Fulfilling Desires',
 		description:
 			'GCG Automotive delivers performance vehicles that combine innovation, reliability, and style, tailored to meet every need.',
-		image: '/home/chasmis-girl.avif',
+		image: '/home/gaadi-motors.jpeg',
 		link: '#',
 	},
 	{
@@ -51,7 +51,7 @@ export const FIELD_OF_WORK: FieldOfWorkType[] = [
 		subtitle: 'Energy from Nature, Power for the Future',
 		description:
 			'GCG Hydropower harnesses nature’s renewable energy, driving sustainability and fostering a greener future.',
-		image: '/home/chasmis-girl.avif',
+		image: '/home/bijuli-batti.jpeg',
 		link: '#',
 	},
 ];

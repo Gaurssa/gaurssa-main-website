@@ -147,4 +147,39 @@ export const FAQS = [
 			},
 		],
 	},
+	{
+		heading: 'Pills',
+		items: [
+			{
+				id: '1',
+				title: 'What is renewable energy?',
+				description:
+					'Renewable energy comes from natural sources that are constantly replenished, such as sunlight, wind, water, and geothermal heat. It is a sustainable alternative to fossil fuels.',
+			},
+			{
+				id: '2',
+				title: 'How can I reduce energy consumption at home?',
+				description:
+					'Simple steps include using LED lighting, turning off appliances when not in use, using energy-efficient appliances, and insulating your home to maintain temperature efficiently.',
+			},
+			{
+				id: '3',
+				title: 'What is the difference between solar and wind energy?',
+				description:
+					'Solar energy harnesses sunlight using solar panels, while wind energy uses turbines powered by the wind. Both are clean energy sources with different installation and geographical requirements.',
+			},
+			{
+				id: '4',
+				title: 'Why is energy conservation important?',
+				description:
+					'Conserving energy helps reduce environmental impact, lower utility bills, and preserve natural resources for future generations. It also contributes to lowering greenhouse gas emissions.',
+			},
+			{
+				id: '5',
+				title: 'Can renewable energy fully replace fossil fuels?',
+				description:
+					'While renewable energy is growing rapidly, complete replacement depends on technological advancements, energy storage solutions, infrastructure, and policy support. It’s a long-term but achievable goal.',
+			},
+		],
+	},
 ];
