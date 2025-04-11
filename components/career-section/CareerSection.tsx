@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { Button } from '../ui/button';
+import { Text } from '../ui/text';
 
 export const CareerSection = () => {
 	return (
@@ -15,10 +16,14 @@ export const CareerSection = () => {
 			<h2 className="text-[32px]/[2.3rem] text-center md:text-[44px] font-dm-serif mt-4">
 				Join a Workplace That Values You!
 			</h2>
-			<p className="text-gray-800 text-center max-w-[30rem] font-light mt-4 ">
+			<Text className="text-center max-w-[30rem] mt-4">
 				At Gaurssa Group of Company, we don’t just work, we grow, innovate, and
 				make an impact!
-			</p>
+			</Text>
+			{/* <p className="text-gray-800 text-center max-w-[30rem] font-light mt-4 ">
+				At Gaurssa Group of Company, we don’t just work, we grow, innovate, and
+				make an impact!
+			</p> */}
 
 			<Button variant={'primary-outline'} className="mt-4">
 				View all Opening

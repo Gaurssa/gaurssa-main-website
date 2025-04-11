@@ -12,6 +12,7 @@ import {
 } from '@/components/ui/accordion';
 import { Button } from '@/components/ui/button';
 import { BUSINESS_MEGAMENU, COMMUNITY_MEGAMENU } from '@/constants/navbar';
+import { useOutsideEventListener } from '@/hooks/useOutsideEventListeners';
 import { cn } from '@/lib/utils';
 import { useNavControllerStore } from '@/store/useNavControllerStore';
 import Link from 'next/link';
@@ -132,7 +133,7 @@ const CloseButton = () => {
 			<CrossIcon
 				width={24}
 				height={24}
-				className=" stroke-gray-600   transition-all duration-300 stroke-2"
+				className=" stroke-gray-600   transition-all duration-300 stroke-1"
 			/>
 		</Button>
 	);
@@ -245,6 +246,7 @@ const DesktopMenu = () => {
 
 const MobileMenu = () => {
 	const { setIsOpen, isOpen } = useNavControllerStore();
+	const ref = useOutsideEventListener(() => setIsOpen(false));
 	return (
 		<>
 			<div
@@ -252,25 +254,15 @@ const MobileMenu = () => {
 			></div>
 			<div
 				className={`md:hidden transition-transform duration-1000 w-[80vw] p-6 ${isOpen ? 'translate-x-0 ' : 'translate-x-200 '} bg-white shadow-lg fixed h-screen  top-0 right-0 z-[300]`}
+				ref={ref as never}
 			>
 				<div className="w-full flex justify-between ">
 					<Link href="/" className="text-2xl font-bold text-gray-800">
 						Gaurssa
 					</Link>
-					<Button
-						variant={'transparent'}
-						size={'fit'}
-						className="md:hidden flex items-center"
-						onClick={() => setIsOpen(false)}
-					>
-						<CrossIcon
-							width={24}
-							height={24}
-							className=" stroke-gray-600   transition-all duration-300 stroke-2"
-						/>
-					</Button>
+					<CloseButton />
 				</div>
-				<nav className="">
+				<nav className="h-full flex flex-col justify-between pb-6">
 					<Accordion type="single" className="min-w-full mt-4" collapsible>
 						{navigation.map((item) => (
 							<AccordionItem
@@ -304,6 +296,10 @@ const MobileMenu = () => {
 						))}
 						{/* */}
 					</Accordion>
+					<Button className="flex items-center gap-2 py-0.5 relative z-[200] w-fit self-end">
+						<OutIcon className="stroke-neutral-50 fill-none w-6 h-6 stroke-1" />
+						<span className="uppercase">Investor Login</span>
+					</Button>
 				</nav>
 			</div>
 		</>

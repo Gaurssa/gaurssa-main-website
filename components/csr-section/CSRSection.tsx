@@ -1,4 +1,5 @@
 import { Button } from '../ui/button';
+import { Text } from '../ui/text';
 
 export const CSRSection = () => {
 	return (
@@ -6,14 +7,22 @@ export const CSRSection = () => {
 			<h2 className="text-[44px] font-dm-serif text-gray-950 text-center">
 				Beyond Profits
 			</h2>
-			<p className="text-gray-800 text-lg font-light text-center mt-2">
+			<Text className=" text-center mt-2">
 				At Gaurssa Group, we believe in creating a positive impact that extends
 				far beyond our business operations. We&apos;re dedicated to empowering
 				individuals and strengthening communities across Nepal. Our initiatives
 				span employment development, environmental stewardship, education, child
 				welfare, senior citizen care, women&apos;s empowerment, and more,
 				reflecting our commitment to holistic societal well-being.
-			</p>
+			</Text>
+			{/* <p className="text-gray-800 text-lg font-light text-center mt-2">
+				At Gaurssa Group, we believe in creating a positive impact that extends
+				far beyond our business operations. We&apos;re dedicated to empowering
+				individuals and strengthening communities across Nepal. Our initiatives
+				span employment development, environmental stewardship, education, child
+				welfare, senior citizen care, women&apos;s empowerment, and more,
+				reflecting our commitment to holistic societal well-being.
+			</p> */}
 
 			<div className="flex items-center justify-center mt-6 gap-3">
 				<Button variant={'primary-outline'} size="sm">

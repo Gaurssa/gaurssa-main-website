@@ -2,6 +2,7 @@ import { CircularArrowIcon } from '@/assets/icons/CircularArrowIcon';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '../ui/button';
+import { Text } from '../ui/text';
 
 export const NewsAndInformationCard = () => {
 	return (
@@ -35,13 +36,20 @@ export const NewsAndInformationCard = () => {
 						<h3 className="text-gray-950 text-2xl/6 font-normal line-clamp-2">
 							GCG: Innovating for a Sustainable Future in Global Business
 						</h3>
-						<p className="text-gray-800 font-light line-clamp-2">
+						<Text className="line-clamp-2">
 							A dynamic leader, GCG is reshaping the standards of excellence
 							through innovation, strategic growth, and a commitment to
 							sustainability. With a strong presence in technology, healthcare,
 							and renewable resources, the company continues to set new
 							benchmarks for quality, efficiency, and corporate responsibility.
-						</p>
+						</Text>
+						{/* <p className="text-gray-800 font-light line-clamp-2">
+							A dynamic leader, GCG is reshaping the standards of excellence
+							through innovation, strategic growth, and a commitment to
+							sustainability. With a strong presence in technology, healthcare,
+							and renewable resources, the company continues to set new
+							benchmarks for quality, efficiency, and corporate responsibility.
+						</p> */}
 					</div>
 
 					<p className="flex items-center gap-2 text-gray-600 font-light text-[12px] md:text-sm  ">
