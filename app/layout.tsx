@@ -6,18 +6,21 @@ const outfit = Outfit({
 	variable: '--font-outfit',
 	subsets: ['latin'],
 	weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+	display: 'swap',
 });
 
 const dmSerfitDisplay = DM_Serif_Display({
 	variable: '--font-dm-serif-display',
 	subsets: ['latin'],
 	weight: ['400'],
+	display: 'swap',
 });
 
 const solitreo = Solitreo({
 	variable: '--font-solitreo',
 	subsets: ['latin'],
 	weight: ['400'],
+	display: 'swap',
 });
 
 export const metadata: Metadata = {
@@ -32,6 +35,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
+			<link rel="preload" as="image" href="/home/hero-video.png" />
 			<body
 				className={` ${outfit.variable} antialiased relative ${dmSerfitDisplay.variable} ${solitreo.variable} font-outfit `}
 			>
