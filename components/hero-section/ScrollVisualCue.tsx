@@ -1,10 +1,12 @@
 'use client';
 
 import { ArrowDownIcon } from '@/assets/icons/ArrowDownIcon';
+import { useScreenSize } from '@/hooks/useScreenSize';
 import { useEffect, useState } from 'react';
 
 export const ScrollVisualCue = () => {
 	const [showScrollCue, setShowScrollCue] = useState(false);
+	const mobileScreenSize = useScreenSize(768);
 	useEffect(() => {
 		function handleScrollCue() {
 			if (window.scrollY > 0) setShowScrollCue(true);
@@ -17,7 +19,7 @@ export const ScrollVisualCue = () => {
 		return () => window.removeEventListener('scroll', handleScrollCue);
 	}, []);
 
-	return (
+	return mobileScreenSize ? null : (
 		<div
 			className={`self-end  px-10 md:px-20  flex flex-col items-center transition-all duration-300 ${showScrollCue ? 'opacity-0 -translate-y-2' : 'opacity-100 translate-y-0'}`}
 		>

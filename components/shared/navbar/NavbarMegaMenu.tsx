@@ -36,7 +36,7 @@ export const NavbarMegaMenu = ({ data }: { data: MegaMenuType[] }) => {
 				</div>
 			)}
 			{/* Menu items */}
-			<ul className="flex flex-col items-start md:grid text-neutral-50 grid-cols-2 md:gap-x-28 gap-y-2 md:max-w-[40rem] md:mx-auto md:items-center h-fit md:py-24">
+			<ul className="flex flex-col items-start md:grid text-neutral-50 grid-cols-2 md:gap-x-12 lg:gap-x-20  gap-y-2 md:max-w-[40rem] md:mx-auto md:items-center h-fit md:py-24">
 				{data.map((data) => (
 					<NavbarList
 						key={data.id}

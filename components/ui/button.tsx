@@ -28,7 +28,7 @@ const buttonVariants = cva(
 				transparent: 'bg-transparent',
 			},
 			size: {
-				default: 'h-10 px-8 py-2 has-[>svg]:px-3',
+				default: 'h-10 px-8 py-1.5 has-[>svg]:px-3',
 				sm: '  gap-1.5 px-3 py-2  h-10 ',
 				lg: 'h-[44px] py-3 px-4 has-[>svg]:px-4',
 				xl: 'h-[56px] py-4 px-5',

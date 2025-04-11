@@ -71,7 +71,7 @@ const Page = () => {
 
 			<section
 				// ref={(el) => setSectionRef(el, 8)}
-				className="h-fit md:h-screen flex items-center flex-col justify-center  py-10 md:py-20   bg-neutral-50 px-4 md:px-20  	"
+				className="h-fit md:h-screen flex items-center flex-col justify-center  pt-10 md:pt-20   bg-neutral-50 px-4 md:px-20  	"
 			>
 				<CSRSection />
 				<ul className="flex flex-wrap md:flex-nowrap max-w-[54.3rem] mx-auto gap-4 mt-10">

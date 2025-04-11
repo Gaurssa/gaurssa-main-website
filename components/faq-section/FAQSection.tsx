@@ -31,7 +31,7 @@ export const FAQSection = () => {
 								onClick={() => setActiveFAQ(faq.heading)}
 								className={`${
 									activeFAQ === faq.heading
-										? 'bg-primary-400 text-neutral-50 border-transparent px-5'
+										? 'bg-primary-400 text-neutral-50 border-transparent '
 										: ''
 								}`}
 							>

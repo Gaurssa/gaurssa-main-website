@@ -6,13 +6,16 @@ import { Text } from '../ui/text';
 
 export const NewsAndInformationCard = () => {
 	return (
-		<div className="  w-full   bg-neutral-50 group md:max-w-[35rem] md:min-w-[35rem]  md:w-[35rem] sm:max-w-[20rem] sm:min-w-[20rem]  sm:w-[20rem]  md:h-[42rem] ">
+		<div className="  w-full    group md:max-w-[35rem] md:min-w-[35rem]  md:w-[35rem] sm:max-w-[20rem] sm:min-w-[20rem]  sm:w-[20rem]  md:h-[42rem] ">
 			<h2 className="text-primary-600 font-medium mb-1">Company Newsroom</h2>
 
-			<Link href="#" className="relative   cursor-pointer">
+			<Link
+				href="#"
+				className="relative bg-neutral-50 cursor-pointer hover:shadow-[0px_10px_10px_rgba(0,0,0,0.1)]  block transition-shadow duration-300"
+			>
 				<Button
 					variant={'tertiary'}
-					className="absolute right-4 top-4  flex items-center py-4 !px-2 group-hover:bg-primary-600 trasition-all duration-300"
+					className="absolute right-4 top-4  flex items-center !p-2 group-hover:bg-primary-600 trasition-all duration-300 h-fit"
 				>
 					<CircularArrowIcon
 						width={20}
