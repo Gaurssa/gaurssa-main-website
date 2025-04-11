@@ -29,8 +29,8 @@ const BOTTOM_FOOTER_DATA = [
 
 export const Footer = () => {
 	return (
-		<footer className=" h-fit md:h-fit -z-[10]  bottom-0  py-10 px-4 lg:px-20 w-full bg-[] md:mt-0 ">
-			<div className="flex w-full flex-col justify-between gap-6 md:gap-10   max-w-[110rem] mx-auto ">
+		<footer className=" h-fit md:h-screen   py-10 px-4 lg:px-20 w-full flex items-end">
+			<div className="flex w-full flex-col justify-between gap-6 md:gap-12   max-w-[110rem] mx-auto ">
 				<div className="flex flex-col gap-4">
 					<div className="w-[16rem] md:w-[24rem]">
 						<Image
@@ -79,18 +79,21 @@ export const Footer = () => {
 					</div>
 				</div>
 
-				<div className="gradient-border w-full h-[1px]"></div>
+				<div className="gradient-border w-full h-[1px] md:-mt-4"></div>
 
-				<div className="flex justify-between flex-col sm:flex-row gap-4 sm:gap-0 -my-2">
+				<div className="flex justify-between flex-col sm:flex-row gap-4 sm:gap-0 md:-my-4">
 					<p className="text-gray-600 font-light text-[12px]">
 						&copy; 2025 Gaurssa Group of Companies. All rights reserved.
 					</p>
 
-					<ul className="flex items-center justify-between sm:gap-4">
+					<ul className="flex items-center ">
 						{BOTTOM_FOOTER_DATA.map((data) => (
-							<li key={data.id} className="">
+							<li
+								key={data.id}
+								className="lg:px-4 px-2 [&:not(:last-child)]:border-r [&:not(:last-child)]:border-gray-200 leading-3 "
+							>
 								<Link
-									className=" text-gray-600 text-[12px] [&:not(:last-child)]:border-r border-red-500 font-light "
+									className=" text-gray-600 text-[12px]  font-light "
 									href={data.link}
 								>
 									{data.label}

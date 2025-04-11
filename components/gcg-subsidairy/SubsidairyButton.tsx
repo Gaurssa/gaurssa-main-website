@@ -6,7 +6,7 @@ export const SubsidairyButton = () => {
 		<Button
 			variant={'secondary'}
 			size={'sm'}
-			className="flex gap-4 items-center  md:mt-8 group  "
+			className="flex gap-4 items-center   md:mt-8 group  "
 		>
 			<span>Visit website</span>
 			<CircularArrowIcon

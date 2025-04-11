@@ -1,3 +1,4 @@
+import { Text } from '../ui/text';
 import { GcgSubsidairyLogo } from './GcgSubsidairyLogo';
 import { SubsidairyButton } from './SubsidairyButton';
 
@@ -12,11 +13,9 @@ export const GcgSubsidairyDescription = () => {
 					<SubsidairyButton />
 				</div>
 			</div>
-			<p className="text-neutral-200 font-normal ">
-				A Subsidiary of the Eyewear Industry
-			</p>
+			<Text variant={'neutral'}>A Subsidiary of the Eyewear Industry</Text>
 
-			<p className="text-neutral-200 font-normal mt-4 md:mt-5 text-wrap">
+			<Text className="mt-4 md:mt-5 text-wrap" variant={'neutral'}>
 				At GCG Eyewear, we believe that your eyewear should not only offer
 				clarity but also reflect your unique style. Our extensive collection
 				features a wide range of frames, available in diverse materials, shapes,
@@ -24,7 +23,7 @@ export const GcgSubsidairyDescription = () => {
 				you&apos;re looking for timeless elegance, modern trends, or bold
 				statements, our eyewear is designed to provide exceptional comfort,
 				durability, and style.
-			</p>
+			</Text>
 			<div className="hidden md:block">
 				<SubsidairyButton />
 			</div>

@@ -8,7 +8,7 @@ const textVariants = cva('font-outfit', {
 		variant: {
 			primary: 'text-gray-800  font-light',
 			secondary: 'text-gray-600 text-sm font-light ',
-			neutral: 'text-gray-200 font-normal',
+			neutral: 'text-gray-200 font-light',
 		},
 		size: {
 			sm: 'text-sm',

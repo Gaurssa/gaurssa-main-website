@@ -73,8 +73,8 @@ const NavbarRoot = ({ children, className }: NavbarRootprops) => {
 
 	const headerClasses = cn(
 		'fixed w-full z-50 transition-all border-b duration-700 border-neutral-50/20',
-		'backdrop-blur-lg flex items-center justify-between px-4 lg:px-20',
-		isScrolled ? 'shadow-md h-12 bg-[#0d0d0dcb]' : 'h-16',
+		'backdrop-blur-lg flex items-center justify-between px-4 lg:px-20 h-16',
+		isScrolled ? 'shadow-md  bg-[#0d0d0dcb]' : '',
 		activeMenu !== null ? 'bg-neutral-50' : '',
 		className
 	);
@@ -169,7 +169,7 @@ const DesktopMenu = () => {
 							<li key={item.name} className="group px block">
 								<Link
 									href={item.href}
-									className="text-sm uppercase group-hover:text-primary-400 text-neutral-50 cursor-pointer px-2 lg:px-6 block"
+									className="text-sm uppercase group-hover:text-primary-400 text-neutral-50 cursor-pointer px-2 lg:px-6 block font-light"
 									aria-current={item.current ? 'page' : undefined}
 								>
 									<TextWithHoverEffect
@@ -217,13 +217,13 @@ const DesktopMenu = () => {
 						>
 							<div
 								className={cn(
-									'relative overflow-hidden text-sm uppercase cursor-pointer flex',
+									'relative overflow-hidden text-sm uppercase cursor-pointer flex items-center font-light',
 									'[&>svg]:transition-transform [&>svg]:duration-300',
 									getLinkTextColor()
 								)}
 							>
 								<TextWithHoverEffect text={item.name} textColor="" />
-								<ArrowDownPointIcon className="w-5 h-5 ml-1 stroke-1 stroke-neutral-50 group-hover:stroke-primary-600 transition-colors duration-300 fill-none" />
+								<ArrowDownPointIcon className="w-4 h-4 ml-1 stroke-1 stroke-neutral-50 group-hover:stroke-primary-600 transition-colors duration-300 fill-none" />
 							</div>
 
 							<div className={getDropdownStyles()}>
@@ -238,7 +238,7 @@ const DesktopMenu = () => {
 
 			<Button className="flex items-center gap-2 py-0.5 relative z-[200]">
 				<OutIcon className="stroke-neutral-50 fill-none w-6 h-6 stroke-1" />
-				<span className="uppercase">Investor Login</span>
+				<span className="uppercase font-light">Investor Login</span>
 			</Button>
 		</nav>
 	);
@@ -298,7 +298,7 @@ const MobileMenu = () => {
 					</Accordion>
 					<Button className="flex items-center gap-2 py-0.5 relative z-[200] w-fit self-end">
 						<OutIcon className="stroke-neutral-50 fill-none w-6 h-6 stroke-1" />
-						<span className="uppercase">Investor Login</span>
+						<span className="uppercase font-light">Investor Login</span>
 					</Button>
 				</nav>
 			</div>
