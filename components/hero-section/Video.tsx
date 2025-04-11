@@ -8,6 +8,8 @@ export const Video = () => {
 			height="100%"
 			controls={false}
 			className="w-full h-full object-center object-cover"
+			preload="auto"
+			poster="/home/hero-video.png"
 		>
 			<source src="/home/hero_video.mp4" type="video/mp4" />
 			<source src="/home/hero_video.ogg" type="video/ogg" />
