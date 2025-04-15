@@ -1,14 +1,14 @@
 'use client';
 
-import { FAQS } from '@/constants/faq';
+import { FAQS } from '@/constants/home/faq';
 import { useState } from 'react';
 import {
 	Accordion,
 	AccordionContent,
 	AccordionItem,
 	AccordionTrigger,
-} from '../ui/accordion';
-import { Button } from '../ui/button';
+} from '../../ui/accordion';
+import { Button } from '../../ui/button';
 
 export const FAQSection = () => {
 	const [activeFAQ, setActiveFAQ] = useState('Automative');

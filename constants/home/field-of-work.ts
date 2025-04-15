@@ -38,7 +38,7 @@ export const FIELD_OF_WORK: FieldOfWorkType[] = [
 	},
 	{
 		id: 4,
-		title: 'Automative',
+		title: 'Automotive',
 		subtitle: 'Driving Dreams, Fulfilling Desires',
 		description:
 			'GCG Automotive delivers performance vehicles that combine innovation, reliability, and style, tailored to meet every need.',

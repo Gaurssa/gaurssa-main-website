@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import { Button } from '../ui/button';
-import { Text } from '../ui/text';
+import { Button } from '../../ui/button';
+import { Text } from '../../ui/text';
 
 export const CareerSection = () => {
 	return (

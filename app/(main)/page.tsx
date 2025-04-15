@@ -1,14 +1,14 @@
-import { AboutUs } from '@/components/about-us/AboutUs';
-import { CareerSection } from '@/components/career-section/CareerSection';
-import { CSRCard } from '@/components/csr-section/CSRCard';
-import { CSRSection } from '@/components/csr-section/CSRSection';
-import { FAQSection } from '@/components/faq-section/FAQSection';
-import { FieldOfWork } from '@/components/field-of-work/FieldOfWork';
-import { GcgSubsidairy } from '@/components/gcg-subsidairy/GcgSubsidairy';
-import { GeoStatsOverview } from '@/components/geo-stats-overview/GeoStatsOverview';
-import { HeroSection } from '@/components/hero-section/HeroSection';
-import { NewsAndInformation } from '@/components/news-and-information/NewsAndInformation';
-import { CSR_DATA } from '@/constants/csr';
+import { AboutUs } from '@/components/home/about-us/AboutUs';
+import { CareerSection } from '@/components/home/career-section/CareerSection';
+import { CSRCard } from '@/components/home/csr-section/CSRCard';
+import { CSRSection } from '@/components/home/csr-section/CSRSection';
+import { FAQSection } from '@/components/home/faq-section/FAQSection';
+import { FieldOfWork } from '@/components/home/field-of-work/FieldOfWork';
+import { GcgSubsidairy } from '@/components/home/gcg-subsidairy/GcgSubsidairy';
+import { GeoStatsOverview } from '@/components/home/geo-stats-overview/GeoStatsOverview';
+import { HeroSection } from '@/components/home/hero-section/HeroSection';
+import { NewsAndInformation } from '@/components/home/news-and-information/NewsAndInformation';
+import { CSR_DATA } from '@/constants/home/csr';
 
 const Page = () => {
 	// const { containerRef, setSectionRef } = useSmoothScroll();
@@ -16,10 +16,10 @@ const Page = () => {
 	// console.log('CONTAINER REF', containerRef);
 
 	return (
-		<div>
+		<div className="">
 			<section
 				// ref={(el) => setSectionRef(el, 0)}
-				className="h-[100svh] relative "
+				className="h-[100svh] relative -mt-16  "
 			>
 				<HeroSection />
 			</section>

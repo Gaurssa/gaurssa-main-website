@@ -1,4 +1,4 @@
-import { ABOUT_US } from '@/constants/home';
+import { ABOUT_US } from '@/constants/home/home';
 
 export const AboutUsInfoCard = () => {
 	return (

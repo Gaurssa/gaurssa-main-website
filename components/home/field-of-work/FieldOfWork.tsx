@@ -1,4 +1,4 @@
-import { FIELD_OF_WORK } from '@/constants/field-of-work';
+import { FIELD_OF_WORK } from '@/constants/home/field-of-work';
 import { FieldOfWorkCard } from './FieldOfWorkCard';
 
 export const FieldOfWork = () => {

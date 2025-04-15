@@ -1,6 +1,6 @@
 'use client';
 
-import { MegaMenuType } from '@/constants/navbar';
+import { MegaMenuType } from '@/constants/home/navbar';
 import { useScreenSize } from '@/hooks/useScreenSize';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
