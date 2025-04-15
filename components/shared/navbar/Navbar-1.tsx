@@ -10,7 +10,7 @@ import {
 	AccordionItem,
 	AccordionTrigger,
 } from '@/components/ui/accordion';
-import { BUSINESS_MEGAMENU, COMMUNITY_MEGAMENU } from '@/constants/navbar';
+import { BUSINESS_MEGAMENU, COMMUNITY_MEGAMENU } from '@/constants/home/navbar';
 import { useScreenSize } from '@/hooks/useScreenSize';
 import { cn } from '@/lib/utils';
 import { useNavControllerStore } from '@/store/useNavControllerStore';

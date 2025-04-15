@@ -1,8 +1,8 @@
 'use client';
 
-import { LOCATION_OVERVIEW } from '@/constants/location-overview';
+import { LOCATION_OVERVIEW } from '@/constants/home/location-overview';
 import { useState } from 'react';
-import { Button } from '../ui/button';
+import { Button } from '../../ui/button';
 
 const LocationButton = () => {
 	const [activeButton, setActiveButton] = useState<null | number>(0);

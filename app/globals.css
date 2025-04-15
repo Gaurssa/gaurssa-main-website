@@ -3,6 +3,232 @@
 
 @custom-variant dark (&:is(.dark *));
 
+:root {
+	/* Typography Scale Variables */
+	--font-size-h1: 52px;
+	--line-height-h1: 1.1;
+	--font-weight-h1: normal;
+	--letter-spacing-h1: normal;
+
+	--font-size-h2: 44px;
+	--line-height-h2: 1.1;
+	--font-weight-h2: normal;
+	--letter-spacing-h2: normal;
+
+	--font-size-h3: 24px;
+	--line-height-h3: 1.5;
+	--font-weight-h3: 500;
+	--letter-spacing-h3: normal;
+
+	--font-size-h4: 24px;
+	--line-height-h4: 1.5;
+	--font-weight-h4: normal;
+	--letter-spacing-h4: normal;
+
+	--font-size-h5: 20px;
+	--line-height-h5: 1.5;
+	--font-weight-h5: 300;
+	--letter-spacing-h5: normal;
+
+	--font-size-blog-title: 24px;
+	--line-height-blog-title: 1.1;
+	--font-weight-blog-title: normal;
+	--letter-spacing-blog-title: normal;
+
+	--font-size-reading-highlighted: 18px;
+	--line-height-reading-highlighted: 1.5;
+	--font-weight-reading-highlighted: 500;
+	--letter-spacing-reading-highlighted: normal;
+
+	--font-size-reading: 18px;
+	--line-height-reading: 1.5;
+	--font-weight-reading: 300;
+	--letter-spacing-reading: normal;
+
+	--font-size-text: 16px;
+	--line-height-text: 1.5;
+	--font-weight-text: 500;
+	--letter-spacing-text: normal;
+
+	--font-size-menu: 16px;
+	--line-height-menu: 1;
+	--font-weight-menu: 300;
+	--letter-spacing-menu: normal;
+}
+
+/* Heading Styles */
+.text-h1 {
+	font-size: var(--font-size-h1);
+	line-height: var(--line-height-h1);
+	font-weight: var(--font-weight-h1);
+	letter-spacing: var(--letter-spacing-h1);
+}
+
+.text-h2 {
+	font-size: var(--font-size-h2);
+	line-height: var(--line-height-h2);
+	font-weight: var(--font-weight-h2);
+	letter-spacing: var(--letter-spacing-h2);
+}
+
+.text-h3 {
+	font-size: var(--font-size-h3);
+	line-height: var(--line-height-h3);
+	font-weight: var(--font-weight-h3);
+	letter-spacing: var(--letter-spacing-h3);
+}
+
+.text-h4 {
+	font-size: var(--font-size-h4);
+	line-height: var(--line-height-h4);
+	font-weight: var(--font-weight-h4);
+	letter-spacing: var(--letter-spacing-h4);
+}
+
+.text-h5 {
+	font-size: var(--font-size-h5);
+	line-height: var(--line-height-h5);
+	font-weight: var(--font-weight-h5);
+	letter-spacing: var(--letter-spacing-h5);
+}
+
+/* Content Styles */
+.text-blog-title {
+	font-size: var(--font-size-blog-title);
+	line-height: var(--line-height-blog-title);
+	font-weight: var(--font-weight-blog-title);
+	letter-spacing: var(--letter-spacing-blog-title);
+}
+
+.text-reading-highlighted {
+	font-size: var(--font-size-reading-highlighted);
+	line-height: var(--line-height-reading-highlighted);
+	font-weight: var(--font-weight-reading-highlighted);
+	letter-spacing: var(--letter-spacing-reading-highlighted);
+}
+
+.text-reading {
+	font-size: var(--font-size-reading);
+	line-height: var(--line-height-reading);
+	font-weight: var(--font-weight-reading);
+	letter-spacing: var(--letter-spacing-reading);
+}
+
+.text-text {
+	font-size: var(--font-size-text);
+	line-height: var(--line-height-text);
+	font-weight: var(--font-weight-text);
+	letter-spacing: var(--letter-spacing-text);
+}
+
+.text-menu {
+	font-size: var(--font-size-menu);
+	line-height: var(--line-height-menu);
+	font-weight: var(--font-weight-menu);
+	letter-spacing: var(--letter-spacing-menu);
+}
+
+/* Combined Typography Styles (with font families) */
+.typography-h1 {
+	font-family: 'DM Serif Display', serif;
+	font-size: var(--font-size-h1);
+	line-height: var(--line-height-h1);
+	font-weight: var(--font-weight-h1);
+	letter-spacing: var(--letter-spacing-h1);
+}
+
+.typography-h2 {
+	font-family: 'DM Serif Display', serif;
+	font-size: var(--font-size-h2);
+	line-height: var(--line-height-h2);
+	font-weight: var(--font-weight-h2);
+	letter-spacing: var(--letter-spacing-h2);
+}
+
+.typography-h3 {
+	font-family: 'Outfit', sans-serif;
+	font-size: var(--font-size-h3);
+	line-height: var(--line-height-h3);
+	font-weight: var(--font-weight-h3);
+	letter-spacing: var(--letter-spacing-h3);
+}
+
+.typography-h4 {
+	font-family: 'Outfit', sans-serif;
+	font-size: var(--font-size-h4);
+	line-height: var(--line-height-h4);
+	font-weight: var(--font-weight-h4);
+	letter-spacing: var(--letter-spacing-h4);
+}
+
+.typography-h5 {
+	font-family: 'Outfit', sans-serif;
+	font-size: var(--font-size-h5);
+	line-height: var(--line-height-h5);
+	font-weight: var(--font-weight-h5);
+	letter-spacing: var(--letter-spacing-h5);
+}
+
+.typography-blog-title {
+	font-family: 'Outfit', sans-serif;
+	font-size: var(--font-size-blog-title);
+	line-height: var(--line-height-blog-title);
+	font-weight: var(--font-weight-blog-title);
+	letter-spacing: var(--letter-spacing-blog-title);
+}
+
+.typography-reading-highlighted {
+	font-family: 'Outfit', sans-serif;
+	font-size: var(--font-size-reading-highlighted);
+	line-height: var(--line-height-reading-highlighted);
+	font-weight: var(--font-weight-reading-highlighted);
+	letter-spacing: var(--letter-spacing-reading-highlighted);
+}
+
+.typography-reading {
+	font-family: 'Outfit', sans-serif;
+	font-size: var(--font-size-reading);
+	line-height: var(--line-height-reading);
+	font-weight: var(--font-weight-reading);
+	letter-spacing: var(--letter-spacing-reading);
+}
+
+.typography-text {
+	font-family: 'Outfit', sans-serif;
+	font-size: var(--font-size-text);
+	line-height: var(--line-height-text);
+	font-weight: var(--font-weight-text);
+	letter-spacing: var(--letter-spacing-text);
+}
+
+.typography-menu {
+	font-family: 'Outfit', sans-serif;
+	font-size: var(--font-size-menu);
+	line-height: var(--line-height-menu);
+	font-weight: var(--font-weight-menu);
+	letter-spacing: var(--letter-spacing-menu);
+}
+
+/* Responsive Typography Adjustments */
+@media (max-width: 768px) {
+	:root {
+		--font-size-h1: 40px;
+		--font-size-h2: 34px;
+		--font-size-h3: 22px;
+		--font-size-h4: 20px;
+	}
+}
+
+@media (max-width: 480px) {
+	:root {
+		--font-size-h1: 32px;
+		--font-size-h2: 28px;
+		--font-size-h3: 20px;
+		--font-size-h4: 18px;
+		--font-size-blog-title: 20px;
+	}
+}
+
 @theme {
 	/* Primary Color */
 	--color-primary-50: #f2f8fd;
@@ -86,6 +312,19 @@
 	--font-dm-serif: 'DM Serif Display', 'Serif';
 	--font-solitreo: 'Solitreo', 'sans-serif';
 	--font-outfit: 'Outfit', 'sans-serif';
+
+	/* --text-h1: var(--font-size-h1); */
+
+	--text-h1: .typography-h1;
+	--text-h2: .typography-h2;
+	--text-h3: .typography-h3;
+	--text-h4: .typography-h4;
+	--text-h5: .typography-h5;
+	--text-menu: .typography-menu;
+	--text-reading: .typography-reading;
+	--text-text: .typography-text;
+	--text-blog-title: .typography-blog-title;
+	--text-reading-highlighted: .typography-reading-highlighted;
 }
 
 .marquee {

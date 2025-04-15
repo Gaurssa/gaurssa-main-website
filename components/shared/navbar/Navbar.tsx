@@ -11,7 +11,7 @@ import {
 	AccordionTrigger,
 } from '@/components/ui/accordion';
 import { Button } from '@/components/ui/button';
-import { BUSINESS_MEGAMENU, COMMUNITY_MEGAMENU } from '@/constants/navbar';
+import { BUSINESS_MEGAMENU, COMMUNITY_MEGAMENU } from '@/constants/home/navbar';
 import { useOutsideEventListener } from '@/hooks/useOutsideEventListeners';
 import { cn } from '@/lib/utils';
 import { useNavControllerStore } from '@/store/useNavControllerStore';
@@ -72,8 +72,8 @@ const NavbarRoot = ({ children, className }: NavbarRootprops) => {
 	}, []);
 
 	const headerClasses = cn(
-		'fixed w-full z-50 transition-all border-b duration-700 border-neutral-50/20',
-		'backdrop-blur-lg flex items-center justify-between px-4 lg:px-20 h-16',
+		'sticky w-full top-0 z-50 transition-all border-b duration-700 border-neutral-50/20',
+		'backdrop-blur-lg flex items-center justify-between px-4 lg:px-20 h-16 bg-[#0d0d0d50]',
 		isScrolled ? 'shadow-md  bg-[#0d0d0dcb]' : '',
 		activeMenu !== null ? 'bg-neutral-50' : '',
 		className

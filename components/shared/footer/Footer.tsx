@@ -4,7 +4,7 @@ import { SubscriptionForm } from '@/components/subscription-form/SubscriptionFor
 import {
 	FOOTER_BUSINESS_DATA,
 	QUICK_LINKS_DATA,
-} from '@/constants/footer-data';
+} from '@/constants/home/footer-data';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FooterList } from '../footer-list/FooterList';

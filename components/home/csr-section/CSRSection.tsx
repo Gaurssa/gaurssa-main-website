@@ -1,5 +1,5 @@
-import { Button } from '../ui/button';
-import { Text } from '../ui/text';
+import { Button } from '../../ui/button';
+import { Text } from '../../ui/text';
 
 export const CSRSection = () => {
 	return (

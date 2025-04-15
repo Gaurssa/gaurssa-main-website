@@ -1,4 +1,4 @@
-import { MegaMenuType } from '@/constants/navbar';
+import { MegaMenuType } from '@/constants/home/navbar';
 import Link from 'next/link';
 import { SetStateAction } from 'react';
 

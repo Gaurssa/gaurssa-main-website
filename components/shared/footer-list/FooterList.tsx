@@ -1,4 +1,4 @@
-import { FooterDataType } from '@/constants/footer-data';
+import { FooterDataType } from '@/constants/home/footer-data';
 import Link from 'next/link';
 
 export const FooterList = ({ data }: { data: FooterDataType[] }) => {

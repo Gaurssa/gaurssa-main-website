@@ -1,5 +1,5 @@
 import { CircularArrowIcon } from '@/assets/icons/CircularArrowIcon';
-import { Button } from '../ui/button';
+import { Button } from '../../ui/button';
 
 export const SubsidairyButton = () => {
 	return (

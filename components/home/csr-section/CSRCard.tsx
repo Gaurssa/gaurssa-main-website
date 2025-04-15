@@ -1,7 +1,7 @@
-import { CSRDataType } from '@/constants/csr';
+import { CSRDataType } from '@/constants/home/csr';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
-import { Text } from '../ui/text';
+import { Text } from '../../ui/text';
 
 export const CSRCard = ({ data }: { data: CSRDataType }) => {
 	return (

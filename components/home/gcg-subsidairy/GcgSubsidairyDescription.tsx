@@ -1,4 +1,4 @@
-import { Text } from '../ui/text';
+import { Text } from '../../ui/text';
 import { GcgSubsidairyLogo } from './GcgSubsidairyLogo';
 import { SubsidairyButton } from './SubsidairyButton';
 

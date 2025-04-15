@@ -1,7 +1,7 @@
-import { FieldOfWorkType } from '@/constants/field-of-work';
+import { FieldOfWorkType } from '@/constants/home/field-of-work';
 import { ArrowRightIcon } from 'lucide-react';
 import Image from 'next/image';
-import { Button } from '../ui/button';
+import { Button } from '../../ui/button';
 
 export const FieldOfWorkCard = ({ data }: { data: FieldOfWorkType }) => {
 	return (
