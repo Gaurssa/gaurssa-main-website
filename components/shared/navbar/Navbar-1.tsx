@@ -83,7 +83,7 @@ export const Navbar: React.FC = () => {
 	return (
 		<header
 			className={cn(
-				'fixed w-full z-50 transition-colors  bg-transaprent border-b duration-[700ms] border-neutral-50/20 backdrop-blur-lg  flex items-center justify-between px-4 lg:px-20',
+				'fixed w-full top-0 z-50 transition-colors  bg-transaprent border-b duration-[700ms] border-neutral-50/20 backdrop-blur-lg  flex items-center justify-between px-4 lg:px-20',
 				isScrolled ? 'shadow-md h-12 bg-[#0d0d0dcb]' : 'h-16',
 				activeMenu === null ? '' : 'bg-neutral-50 '
 			)}

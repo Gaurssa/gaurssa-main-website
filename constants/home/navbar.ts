@@ -9,31 +9,31 @@ export const BUSINESS_MEGAMENU: MegaMenuType[] = [
 	{
 		id: 1,
 		label: 'Eyeware',
-		link: '#',
+		link: '/industries',
 		image: '/mega-menu/eyeware.jpeg',
 	},
 	{
 		id: 2,
 		label: 'Textile',
-		link: '#',
+		link: '/industries',
 		image: '/mega-menu/textile.jpeg',
 	},
 	{
 		id: 3,
 		label: 'Automative',
-		link: '#',
+		link: '/industries',
 		image: '/mega-menu/automative.jpeg',
 	},
 	{
 		id: 4,
 		label: 'Energy',
-		link: '#',
+		link: '/industries',
 		image: '/mega-menu/energy.jpeg',
 	},
 	{
 		id: 5,
 		label: 'Healthcare',
-		link: '#',
+		link: '/industries',
 		image: '/mega-menu/healthcare.jpeg',
 	},
 ];

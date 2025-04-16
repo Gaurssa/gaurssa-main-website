@@ -6,8 +6,8 @@ import { Button } from '../../ui/button';
 export const NewsLatest = () => {
 	const isMobile = useScreenSize(768, 'max');
 	return (
-		<div className="md:flex gap-4 w-full block md:max-w-[110rem] mx-auto md:px-20 px-4">
-			<NewsCard.Root className="w-full md:w-2/3 md:h-full md:max-w-2/3 md:min-w-2/3 md:min-h-full md:max-h-full sm:min-w-full sm:max-w-full sm:w-full h-full max-h-full">
+		<div className="md:flex gap-4 w-full block  lg:px-20 px-4">
+			<NewsCard.Root className="w-full md:w-2/3 md:h-full md:max-w-2/3 md:min-w-2/3  sm:min-w-full sm:max-w-full sm:w-full h-full max-h-full">
 				<NewsCard.Link
 					href="#"
 					className="flex w-full h-full sm:w-full sm:max-w-full sm:min-w-full "
@@ -27,7 +27,7 @@ export const NewsLatest = () => {
 							</Button>
 						</NewsCard.Action>
 					</div>
-					<NewsCard.Content className="border gap-12 sm:gap-0 justify-between w-[70%] p-2 md:p-2">
+					<NewsCard.Content className="border gap-12  justify-between w-[70%] p-2 md:p-2">
 						<div className="flex flex-col gap-3">
 							<NewsCard.Title>
 								GCG: Innovating for a Sustainable Future in Global Business
@@ -67,9 +67,9 @@ export const NewsLatest = () => {
 						<NewsCard.Image
 							src="/home/blog-1.jpeg"
 							alt="Blog"
-							className="h-[6rem] md:h-[8rem]"
+							className="h-[8rem] sm:h-[10rem]"
 						/>
-						<NewsCard.Content className=" sm:gap-12 md:p-2 ">
+						<NewsCard.Content className=" sm:gap-10 md:p-2 ">
 							<div className="flex flex-col gap-3 ">
 								<NewsCard.Title className="text-xl/6">
 									GCG: Innovating for a Sustainable Future in Global Business
