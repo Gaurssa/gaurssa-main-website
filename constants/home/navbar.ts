@@ -8,7 +8,7 @@ export interface MegaMenuType {
 export const BUSINESS_MEGAMENU: MegaMenuType[] = [
 	{
 		id: 1,
-		label: 'Eyeware',
+		label: 'Eyewear',
 		link: '/industries',
 		image: '/mega-menu/eyeware.jpeg',
 	},

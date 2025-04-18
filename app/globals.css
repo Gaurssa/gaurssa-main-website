@@ -395,5 +395,5 @@
 
 body {
 	scroll-behavior: smooth !important;
-	transition: scroll 0.2s;
+	transition: scroll 1s;
 }

@@ -33,7 +33,7 @@ export const FieldOfWorkCard = ({ data }: { data: FieldOfWorkType }) => {
 					className="gap-2 mt-4 pr-2 pl-6 py-1 h-9"
 				>
 					<span>Learn more</span>
-					<span className="border border-primary-600 rounded-full w-5 h-5  group-hover:border-primary-200 transition-colors duration-300 flex items-center justify-center">
+					<span className="border border-primary-600 rounded-full p-[1px]  group-hover:border-primary-200 transition-colors duration-300 flex items-center justify-center">
 						<ArrowRightIcon className="w-4	 h-4	 stroke-primary-600 stroke-1 hover:stroke-neutral-50 group-hover:stroke-neutral-50 transition-colors duration-300" />
 					</span>
 				</Button>

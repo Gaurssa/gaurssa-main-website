@@ -11,7 +11,7 @@ export const IndustryCard = ({ data }: { data: CompaniesType }) => {
 	const isMobileScreen = useScreenSize(1024, 'max');
 	return isMobileScreen ? (
 		<Link
-			href={`#`}
+			href={`/industries/${data.slug}`}
 			className="group flex flex-col items-center justify-center   h-[25.6rem] overflow-hidden relative"
 		>
 			<Image
@@ -28,23 +28,36 @@ export const IndustryCard = ({ data }: { data: CompaniesType }) => {
 				)}
 			>
 				<div className="w-10 h-auto">
-					<Image
-						src={data.logo}
-						alt={data.name}
-						width={1000}
-						height={1000}
-						className="w-full h-full"
-					/>
+					{data.logoWhite ? (
+						<Image
+							src={data.logoWhite}
+							alt={data.name}
+							width={1000}
+							height={1000}
+							className="w-full h-full"
+						/>
+					) : (
+						<Image
+							src={data.logo}
+							alt={data.name}
+							width={1000}
+							height={1000}
+							className="w-full h-full"
+						/>
+					)}
 				</div>
 
-				<span className="text-neutral-50 text-2xl font-light uppercase tracking-wide">
-					{data.name}
+				<span className="text-neutral-50 text-2xl font-light uppercase tracking-wide flex justify-between items-center">
+					<span>{data.name}</span>
+					<span>
+						<CircularArrowIcon className="w-6 h-6 stroke-neutral-50" />
+					</span>
 				</span>
 			</div>
 		</Link>
 	) : (
 		<Link
-			href={`#`}
+			href={`/industries/${data.slug}`}
 			className="group flex flex-col gap-2 items-center justify-center   h-[25.6rem] overflow-hidden relative border border-gray-200 "
 		>
 			<Image

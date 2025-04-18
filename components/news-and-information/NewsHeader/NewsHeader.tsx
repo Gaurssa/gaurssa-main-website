@@ -7,11 +7,13 @@ import { NewsSearch } from '../NewsSearch/NewsSearch';
 export const NewsHeader = () => {
 	return (
 		<>
-			<ScrollableHeader>News and Information</ScrollableHeader>
-			<div className="flex md:flex-row flex-col gap-4  justify-between md:items-center">
-				<NewsCategory />
-				<NewsSearch />
-			</div>
+			<ScrollableHeader className="">
+				<h1>News and Information</h1>
+				<div className="flex md:flex-row flex-col gap-4  justify-between md:items-center ">
+					<NewsCategory />
+					<NewsSearch />
+				</div>
+			</ScrollableHeader>
 		</>
 	);
 };

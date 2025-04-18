@@ -84,6 +84,7 @@ const NavbarRoot = ({ children, className }: NavbarRootprops) => {
 		`backdrop-blur-lg flex z-[9999] items-center justify-between px-4 lg:px-20 h-16 `,
 		isScrolled && isNavWhite ? 'shadow-md  bg-[#0d0d0dcb]' : '',
 		activeMenu !== null ? 'bg-neutral-50' : '',
+		!isNavWhite ? 'bg-neutral-50' : '',
 		className
 	);
 

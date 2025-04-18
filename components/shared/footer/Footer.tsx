@@ -42,7 +42,7 @@ export const Footer = () => {
 						/>
 					</div>
 					<div>
-						<p className="text-gray-800 font-light">+977 1234567890</p>
+						{/* <p className="text-gray-800 font-light">+977 1234567890</p> */}
 						<p className="text-gray-800 font-light">
 							Email: rajeetnakarmi@gaurssa.com
 						</p>

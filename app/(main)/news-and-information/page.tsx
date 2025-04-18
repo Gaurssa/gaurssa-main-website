@@ -7,7 +7,7 @@ import { NewsLatest } from '@/components/news-and-information/NewsLatest/NewsLat
 const page = () => {
 	return (
 		<div className="flex flex-col min-h-screen ">
-			<section className="sticky top-0  lg:px-20 px-4 z-100 bg-neutral-50 py-4">
+			<section className="md:sticky top-0  lg:px-20 px-4 z-100 bg-neutral-50 py-4">
 				<NewsHeader />
 			</section>
 

@@ -5,8 +5,10 @@ import { COMPANIES } from '@/constants/industries/industries';
 const page = () => {
 	return (
 		<div className="flex flex-col min-h-screen">
-			<section className="sticky top-0  lg:px-20 px-4 z-100 bg-neutral-50 py-4">
-				<ScrollableHeader>Eyeware</ScrollableHeader>
+			<section className="md:sticky top-0  lg:px-20 px-4 z-100 bg-neutral-50 py-4">
+				<ScrollableHeader>
+					<h1>Eyeware</h1>
+				</ScrollableHeader>
 			</section>
 
 			<div className="w-full ">

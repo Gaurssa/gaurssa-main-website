@@ -71,7 +71,7 @@ export const NewsLatest = () => {
 						/>
 						<NewsCard.Content className=" sm:gap-10 md:p-2 ">
 							<div className="flex flex-col gap-3 ">
-								<NewsCard.Title className="text-xl/6">
+								<NewsCard.Title className="text-xl/6 line-clamp-1">
 									GCG: Innovating for a Sustainable Future in Global Business
 								</NewsCard.Title>
 								<NewsCard.Description>
