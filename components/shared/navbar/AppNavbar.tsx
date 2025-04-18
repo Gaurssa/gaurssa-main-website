@@ -8,7 +8,7 @@ export const AppNavbar = () => {
 	return (
 		<Navbar.Root>
 			<Navbar.Link href="/">
-				<span className="text-2xl font-bold text-gray-800">GARUSSA</span>
+				<span className="text-2xl font-bold text-gray-800">GAURSSA</span>
 			</Navbar.Link>
 			{!screenSize ? (
 				<Navbar.DesktopMenu />

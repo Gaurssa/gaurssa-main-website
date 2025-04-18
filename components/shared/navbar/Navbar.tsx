@@ -16,6 +16,7 @@ import { useOutsideEventListener } from '@/hooks/useOutsideEventListeners';
 import { cn } from '@/lib/utils';
 import { useNavControllerStore } from '@/store/useNavControllerStore';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useEffect } from 'react';
 import { NavbarMegaMenu } from './NavbarMegaMenu';
 
@@ -52,7 +53,11 @@ interface NavbarRootprops extends React.ComponentProps<'header'> {
 }
 
 const NavbarRoot = ({ children, className }: NavbarRootprops) => {
-	const { activeMenu, isScrolled, setIsScrolled } = useNavControllerStore();
+	const { activeMenu, isScrolled, setIsScrolled, isNavWhite, setIsNavWhite } =
+		useNavControllerStore();
+
+	const pathname = usePathname();
+	// console.log('PATH NAME', pathname);
 
 	useEffect(() => {
 		const handleScroll = () => {
@@ -63,19 +68,23 @@ const NavbarRoot = ({ children, className }: NavbarRootprops) => {
 			}
 		};
 
-		handleScroll();
+		setIsNavWhite(pathname === '/');
 
-		window.addEventListener('scroll', handleScroll);
+		if (pathname === '/') {
+			handleScroll();
+			window.addEventListener('scroll', handleScroll);
+		}
 		return () => {
 			window.removeEventListener('scroll', handleScroll);
 		};
-	}, []);
+	}, [pathname]);
 
 	const headerClasses = cn(
-		'sticky w-full top-0 z-50 transition-all border-b duration-700 border-neutral-50/20',
-		'backdrop-blur-lg flex items-center justify-between px-4 lg:px-20 h-16 bg-[#0d0d0d50]',
-		isScrolled ? 'shadow-md  bg-[#0d0d0dcb]' : '',
+		'fixed w-full right-0 top-0 z-50 transition-all border-b duration-700 border-neutral-50/20',
+		`backdrop-blur-lg flex z-[9999] items-center justify-between px-4 lg:px-20 h-16 `,
+		isScrolled && isNavWhite ? 'shadow-md  bg-[#0d0d0dcb]' : '',
 		activeMenu !== null ? 'bg-neutral-50' : '',
+		!isNavWhite ? 'bg-neutral-50' : '',
 		className
 	);
 
@@ -104,7 +113,7 @@ const List = ({ className }: React.ComponentProps<'li'>) => {
 };
 
 const OpenButton = () => {
-	const { setIsOpen } = useNavControllerStore();
+	const { setIsOpen, isNavWhite } = useNavControllerStore();
 	return (
 		<Button
 			variant={'transparent'}
@@ -115,7 +124,7 @@ const OpenButton = () => {
 			<MenuIcon
 				width={28}
 				height={28}
-				className=" stroke-neutral-50   transition-all duration-300 "
+				className={`${isNavWhite ? ' stroke-neutral-50' : 'stroke-gray-600'}   transition-all duration-300 `}
 			/>
 		</Button>
 	);
@@ -157,7 +166,8 @@ const TextWithHoverEffect = ({
 );
 
 const DesktopMenu = () => {
-	const { setActiveMenu, activeMenu, isScrolled } = useNavControllerStore();
+	const { setActiveMenu, activeMenu, isScrolled, isNavWhite } =
+		useNavControllerStore();
 
 	return (
 		<nav className="hidden md:flex items-center gap-4 h-full">
@@ -169,7 +179,7 @@ const DesktopMenu = () => {
 							<li key={item.name} className="group px block">
 								<Link
 									href={item.href}
-									className="text-sm uppercase group-hover:text-primary-400 text-neutral-50 cursor-pointer px-2 lg:px-6 block font-light"
+									className={`text-sm uppercase group-hover:text-primary-400 ${isNavWhite ? 'text-neutral-50 ' : 'text-gray-400'} cursor-pointer px-2 lg:px-6 block font-light`}
 									aria-current={item.current ? 'page' : undefined}
 								>
 									<TextWithHoverEffect
@@ -184,10 +194,10 @@ const DesktopMenu = () => {
 					// Dropdown menu item
 					const getLinkTextColor = () => {
 						if (activeMenu === null)
-							return 'text-neutral-50 [&>svg]:text-neutral-50';
+							return ` [&>svg]:text-neutral-50 ${isNavWhite ? 'text-neutral-50' : 'text-gray-400'}`;
 						return activeMenu === item.id
-							? 'text-primary-600 [&>svg]:stroke-primary-600 [&>svg]:-rotate-180'
-							: 'text-gray-500 [&>svg]:stroke-gray-500';
+							? `text-primary-600 [&>svg]:stroke-primary-600 [&>svg]:-rotate-180`
+							: `text-gray-400 [&>svg]:stroke-gray-400 `;
 					};
 
 					const getDropdownStyles = () => {
@@ -223,7 +233,9 @@ const DesktopMenu = () => {
 								)}
 							>
 								<TextWithHoverEffect text={item.name} textColor="" />
-								<ArrowDownPointIcon className="w-4 h-4 ml-1 stroke-1 stroke-neutral-50 group-hover:stroke-primary-600 transition-colors duration-300 fill-none" />
+								<ArrowDownPointIcon
+									className={`w-4 h-4 ml-1 stroke-1 ${isNavWhite ? 'stroke-neutral-50' : 'stroke-gray-400'} group-hover:stroke-primary-600 transition-colors duration-300 fill-none`}
+								/>
 							</div>
 
 							<div className={getDropdownStyles()}>

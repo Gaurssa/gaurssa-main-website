@@ -19,7 +19,7 @@ const Page = () => {
 		<div className="">
 			<section
 				// ref={(el) => setSectionRef(el, 0)}
-				className="h-[100svh] relative -mt-16  "
+				className="h-[100svh] relative   "
 			>
 				<HeroSection />
 			</section>

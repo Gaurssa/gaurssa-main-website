@@ -394,5 +394,6 @@
 }
 
 body {
-	scroll-behavior: smooth;
+	scroll-behavior: smooth !important;
+	transition: scroll 1s;
 }

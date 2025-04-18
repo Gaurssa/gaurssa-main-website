@@ -18,6 +18,8 @@ const buttonVariants = cva(
 					'border border-primary-600 hover:border-transparent hover:bg-primary-600 hover:text-neutral-50 text-primary-600 font-normal',
 				secondary:
 					'bg-primary-600  hover:bg-primary-200 hover:text-primary-600 text-neutral-50 font-normal text-[16px]',
+				'secondary-outline':
+					'bg-transparent  hover:bg-primary-600 hover:text-neutral-50 text-primary-600 border border-primary-600 font-normal text-[16px]',
 				// Bordered primary button
 				'bordered-primary':
 					'border border-gray-400 bg-transparent hover:bg-primary-400 hover:text-neutral-50 hover:border-primary-400 text-gray-400 font-normal',
